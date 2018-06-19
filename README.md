@@ -1,3 +1,4 @@
 # VegCart
 App for vegetable &amp; Fruit sale
-Devoped for 4.0.1 and up
+Developed for 4.2 to 8.
+Youtube vedio link : https://youtu.be/_DvaeGzWHBo
