@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">VegCartPro</string>
+    <string name="some_natural_fact">Some Natural Fact :</string>
+    <string name="visit_food">Visit Food</string>
+    <string name="rahul">rahul</string>
+    <string name="text">text</string>
+    <string name="benefits">Benefits</string>
+    <string name="precautions">Precautions</string>
+    <string name="help_heal">Help to heal</string>
+    <string name="open">Open Navigation drawer</string>
+    <string name="close">Close Navigation drawer</string>
+    <string name="address">Kota, Rajasthan</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="slogan">WE Provide Fresh food</string>
+
+    <string name="notification_add_to_cart_button">Like</string>
+    <string name="group_name">Group 1</string>
+    <string name="notifications_admin_channel_name">Global channel</string>
+    <string name="notifications_admin_channel_description">Notifications sent from the app admin</string>
+    <string name="default_notification_channel_id">Channel ID</string>
+</resources>
