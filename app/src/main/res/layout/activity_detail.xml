@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.example.rahul.vegcartpro.Detail">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/cauliflower" />
+<ImageView
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:layout_below="@+id/imageView"
+    android:id="@+id/like"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="10dp"
+    />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:text="₹ 5 per KG"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:id="@+id/tv_price"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:layout_below="@+id/imageView"
+    android:id="@+id/cart"
+    android:src="@drawable/truck"
+            android:layout_marginTop="10dp"
+    android:layout_alignParentEnd="true"
+            android:onClick="orderCart"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cart"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="italic"
+            android:text="@string/some_natural_fact" />
+        <TextView
+            android:id="@+id/tv_t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="@string/benefits" />
+        <TextView
+            android:id="@+id/tv_d1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_t1"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/rahul" />
+
+        <TextView
+            android:id="@+id/tv_t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_d1"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="Vitamin &amp; Mineral" />
+        <TextView
+            android:id="@+id/tv_d2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_t2"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/rahul" />
+
+        <TextView
+            android:id="@+id/tv_t3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_d2"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="@string/help_heal" />
+        <TextView
+            android:id="@+id/tv_d3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_t3"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/text" />
+
+        <TextView
+            android:id="@+id/tv_t4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_d3"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="@string/precautions" />
+        <TextView
+            android:id="@+id/tv_d4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_t4"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/text" />
+
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>
