@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "28915234825",
+    "firebase_url": "https://vegcartpro.firebaseio.com",
+    "project_id": "vegcartpro",
+    "storage_bucket": "vegcartpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28915234825:android:526597789b8e6d00",
+        "android_client_info": {
+          "package_name": "in.example.rahul.vegcartpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28915234825-hv1rglni9dt3m8hj6gvqnmq8c7rbenff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.example.rahul.vegcartpro",
+            "certificate_hash": "1c17e7fc5515569e0394151126df306a699bd008"
+          }
+        },
+        {
+          "client_id": "28915234825-pcd2kufj0pbf9e5el684uks7840hmc97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBZzOvDenhmYhf3-RtwsBiR8aV8QtbELc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28915234825-pcd2kufj0pbf9e5el684uks7840hmc97.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
