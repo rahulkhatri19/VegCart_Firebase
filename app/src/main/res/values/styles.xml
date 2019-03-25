@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryDark">@color/dark_green</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBarStyle">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+
+    <!--<style name="AppTheme.Green" parent="PayumoneyAppTheme">
+    <item name="colorPrimary">@color/persian_green_primary</item>
+<item name="colorPrimaryDark">@color/persian_green_dark</item>
+<item name="colorAccent">@color/persian_green_accent</item>
+<item name="colorButtonNormal">@color/persian_green_primary</item>
+<item name="alertDialogTheme">@style/AlertDialogStyle_green</item>
+<item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="AlertDialogStyle_green" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/persian_grey_accent</item>
+        <item name="android:textColorPrimary">@color/payumoney_text_color</item>
+    </style>-->
+</resources>

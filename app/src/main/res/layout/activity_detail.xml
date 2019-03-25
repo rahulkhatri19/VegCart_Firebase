@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cb_grey"
+    tools:context="in.example.rahul.vegcartpro.activity.Detail">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/light_green" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/background_white"
+                android:padding="8dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cauliflower" />
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:background="@drawable/background_white"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:text="₹ 5 per KG"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <ImageView
+                android:id="@+id/cart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:background="@drawable/background_white"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:onClick="orderCart"
+                android:src="@drawable/ic_shopping_cart" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cart"
+                android:background="@drawable/background_white"
+                android:padding="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/some_natural_fact"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tv_t1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/benefits"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/tv_d1"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_t1"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rahul"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/tv_t2"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_d1"
+                    android:layout_marginTop="10dp"
+                    android:text="Vitamin &amp; Mineral"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/tv_d2"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_t2"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rahul"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/tv_t3"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_d2"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/help_heal"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/tv_d3"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_t3"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/tv_t4"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_d3"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/precautions"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/tv_d4"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_t4"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

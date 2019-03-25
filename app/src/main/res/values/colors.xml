@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="green">#40f708</color>
+
+    <color name="btnSignUp">#39796b</color>
+    <color name="btnSignActivity">#a9d440</color>
+
+    <color name="overlayBackground">#7f333639</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+
+
+    <color name="primary">#7AA4D5</color>
+    <color name="primary_dark">#165E8B</color>
+    <color name="accent">#7AA4D5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="persian_green_primary">#0DAC8F</color>
+    <color name="persian_green_dark">#0A927A</color>
+    <color name="persian_green_accent">#0A927A</color>
+    <color name="pink_primary">#EB1E63</color>
+    <color name="pink_dark">#C0175C</color>
+    <color name="pink_accent">#C0175C</color>
+    <color name="royal_blue_primary">#4C63E2</color>
+    <color name="royal_blue_dark">#4055BF</color>
+    <color name="royal_blue_accent">#4055BF</color>
+    <color name="purple_primary">#9C28B1</color>
+    <color name="purple_dark">#7A1FA2</color>
+    <color name="purple_accent">#7A1FA2</color>
+    <color name="orange_accent">#F3A62E</color>
+    <color name="indigo">#3E50AE</color>
+    <color name="pink">#FF427C</color>
+    <color name="grey">#C2C2C2</color>
+    <color name="persian_grey_primary">#616161</color>
+    <color name="persian_grey_dark">#424242</color>
+    <color name="persian_grey_accent">#9e9e9e</color>
+    <color name="cb_grey">#dedede</color>
+    <color name="dark_green">#11998e</color>
+    <color name="light_green">#2DD782</color>
+    <color name="black">#000000</color>
+</resources>
