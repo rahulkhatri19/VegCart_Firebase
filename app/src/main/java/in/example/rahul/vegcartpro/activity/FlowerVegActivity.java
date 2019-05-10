@@ -1,6 +1,7 @@
 package in.example.rahul.vegcartpro.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -36,6 +38,7 @@ public class FlowerVegActivity extends AppCompatActivity {
     RelativeLayout rlNoData;
     String name, nameHindi, mName, ImageUrl, det, det2, det3, det4, det5;
     ProgressDialog progressDialog;
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,9 @@ public class FlowerVegActivity extends AppCompatActivity {
         progressDialog.show();
         rlNoData.setVisibility(View.GONE);
         recyclerView.setHasFixedSize(true);
+
+        firebaseAnalytics= FirebaseAnalytics.getInstance(this);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         if (!new SharedPreferenceUtils(this).getFlowerVeg().equals("null")) {
             rlNoData.setVisibility(View.GONE);
@@ -100,6 +106,16 @@ public class FlowerVegActivity extends AppCompatActivity {
                         det3 = clickItem.getDis();
                         det4 = clickItem.getDat();
                         det5 = clickItem.getPrice();
+
+                        Bundle firebaseBundle= new Bundle();
+                        firebaseBundle.putInt(FirebaseAnalytics.Param.ITEM_ID, position);
+                        firebaseBundle.putString(FirebaseAnalytics.Param.ITEM_NAME, clickItem.getName());
+                        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, firebaseBundle);
+                        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
+                        firebaseAnalytics.setMinimumSessionDuration(1000);
+                        firebaseAnalytics.setSessionTimeoutDuration(500);
+                        firebaseAnalytics.setUserId(String.valueOf(position));
+                        firebaseAnalytics.setUserProperty("Food", clickItem.getName());
 
                         mName = name + "\n" + nameHindi + "\n" + det5;
                         //  Toast.makeText(FlowerVegActivity.this,mName,Toast.LENGTH_SHORT).show();

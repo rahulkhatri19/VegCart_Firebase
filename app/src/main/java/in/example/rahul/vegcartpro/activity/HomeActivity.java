@@ -29,6 +29,7 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +50,7 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
     HashMap<String, String> HashMapForURL;
     HashMap<String, Integer> HashMapForLocal;
     boolean doubleBackToExitPressedOnce= false;
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,10 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
         navigationView.setNavigationItemSelectedListener(this);
         View headerView = navigationView.getHeaderView(0);
         TextView txtFullName = headerView.findViewById(R.id.txtFullName);
+
+        Context context;
+        firebaseAnalytics= FirebaseAnalytics.getInstance(HomeActivity.this);
+
         // recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
         // layoutManager.
         // Call below method if you want images online
