@@ -43,7 +43,7 @@
         <activity android:name=".ContactActivity" />
         <activity android:name=".MyCart"></activity>
 
-        <service
+      <!--  <service
             android:name=".notifications.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
@@ -54,7 +54,7 @@
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </service>
+        </service>-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_action_home" />
