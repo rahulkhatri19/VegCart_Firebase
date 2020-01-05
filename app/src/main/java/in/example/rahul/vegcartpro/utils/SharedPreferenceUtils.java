@@ -3,7 +3,7 @@ package in.example.rahul.vegcartpro.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SharedPreferenceUtils {
+/*public class SharedPreferenceUtils {
 
     Context mContext;
     SharedPreferences pref;
@@ -25,4 +25,4 @@ public class SharedPreferenceUtils {
        if (pref.contains("id")) return pref.getString("id", "");
        else return "null";
     }
-}
+}*/

@@ -17,6 +17,7 @@ import in.example.rahul.vegcartpro.Model.ItemModel;
  * Created by Rahul on 19-03-2018.
  */
 
+/*
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<ItemModel> itemList;
     private ClickListener clickListener=null;
@@ -75,3 +76,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void itemClicked(View view, int position);
     }
 }
+*/

@@ -11,7 +11,10 @@ import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 
 class StartActivity: AppCompatActivity() {
-    var isAppRunning = false
+    companion object{
+        var isAppRunning = false
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)

@@ -246,7 +246,7 @@ class FlowerVegActivity : AppCompatActivity() {
         loadData()
         val ab = supportActionBar
         if (ab != null) {
-            ab.setTitle(SharedPreferenceUtils(this).getFlowerVeg().substring(0, 1).toUpperCase() + SharedPreferenceUtils(this).getFlowerVeg().substring(1))
+            ab.setTitle(SharedPreferenceUtils(this).getFlowerVeg()?.substring(0, 1)?.toUpperCase() + SharedPreferenceUtils(this).getFlowerVeg()?.substring(1))
             ab.setDisplayHomeAsUpEnabled(true)
         }
     }

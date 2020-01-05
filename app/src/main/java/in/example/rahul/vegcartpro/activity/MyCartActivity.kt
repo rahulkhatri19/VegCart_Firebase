@@ -53,10 +53,10 @@ class MyCartActivity : AppCompatActivity() {
         val options: FirebaseRecyclerOptions<CartModel> = FirebaseRecyclerOptions.Builder<CartModel>().setQuery(allFoodData!!, CartModel::class.java).setLifecycleOwner(this).build()
         val adapter: FirebaseRecyclerAdapter<CartModel, FoodViewHolder> = object : FirebaseRecyclerAdapter<CartModel, FoodViewHolder>(options) {
             protected override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
-                viewHolder.tvName.setText(model.getName())
-                viewHolder.tvPrice.setText(model.getPrice())
-                viewHolder.tvQuantity.setText(model.getQuantity())
-                viewHolder.tvAddress.setText(model.getAddress())
+                viewHolder.tvName.setText(model.Name)
+                viewHolder.tvPrice.setText(model.Price)
+                viewHolder.tvQuantity.setText(model.Price)
+                viewHolder.tvAddress.setText(model.Address)
                 progressDialog!!.dismiss()
             }
 

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import in.example.rahul.vegcartpro.Interface.ItemClickListener;
 import in.example.rahul.vegcartpro.R;
 
 /**
