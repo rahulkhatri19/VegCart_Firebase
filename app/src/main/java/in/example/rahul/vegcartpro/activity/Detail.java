@@ -1,7 +1,6 @@
 package in.example.rahul.vegcartpro.activity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
 
-import in.example.rahul.vegcartpro.Model.Cart;
+import in.example.rahul.vegcartpro.Model.CartModel;
 import in.example.rahul.vegcartpro.R;
 
 public class Detail extends AppCompatActivity {
@@ -133,7 +132,7 @@ public class Detail extends AppCompatActivity {
 
                     DatabaseReference newPostRef=ref.push();
 
-                    newPostRef.setValue(new Cart(detail,tvPrice.getText().toString(),tvQuantity.getText().toString(),etDeliveryAdd.getText().toString()));
+                    newPostRef.setValue(new CartModel(detail,tvPrice.getText().toString(),tvQuantity.getText().toString(),etDeliveryAdd.getText().toString()));
 
                     Toast.makeText(getBaseContext(),"Order Placed Successfully \n Thank you",Toast.LENGTH_SHORT).show();
 

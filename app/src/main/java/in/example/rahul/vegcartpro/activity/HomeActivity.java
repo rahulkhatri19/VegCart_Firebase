@@ -1,44 +1,6 @@
 package in.example.rahul.vegcartpro.activity;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.daimajia.slider.library.Animations.DescriptionAnimation;
-import com.daimajia.slider.library.SliderLayout;
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.daimajia.slider.library.Tricks.ViewPagerEx;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import in.example.rahul.vegcartpro.Model.Item;
-import in.example.rahul.vegcartpro.MyAdapter;
-import in.example.rahul.vegcartpro.R;
-import in.example.rahul.vegcartpro.utils.SharedPreferenceUtils;
-
+/*
 public class HomeActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener, MyAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     private List<Item> itemList = new ArrayList<>();
@@ -159,10 +121,12 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
 
     }
 
-    /*public void foodVisit(View view) {
+    */
+/*public void foodVisit(View view) {
         Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
         startActivity(intent);
-    }*/
+    }*//*
+
 
     // Bottom
 
@@ -304,3 +268,4 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 }
+*/

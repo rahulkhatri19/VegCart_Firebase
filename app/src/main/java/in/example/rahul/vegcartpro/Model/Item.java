@@ -4,7 +4,7 @@ package in.example.rahul.vegcartpro.Model;
  * Created by Rahul on 19-03-2018.
  */
 
-public class Item {
+/*public class Item {
     private int imageId;
     private String title;
     private String subtitle;
@@ -37,4 +37,4 @@ public class Item {
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
-}
+}*/

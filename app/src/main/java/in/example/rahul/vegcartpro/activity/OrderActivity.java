@@ -1,25 +1,11 @@
 package in.example.rahul.vegcartpro.activity;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
-
-import java.text.NumberFormat;
-
-import in.example.rahul.vegcartpro.Model.Cart;
-import in.example.rahul.vegcartpro.R;
-
+/*
 public class OrderActivity extends AppCompatActivity {
+*/
 /*  onclick cart image on detail activity this will open
-  * Use: To put order size and cost  */
+  * Use: To put order size and cost  *//*
+
     TextView tvQuantity,tvPrice;
     public double numberOfVeg=1 ;
     public double priceOfVeg ;
@@ -95,3 +81,4 @@ public class OrderActivity extends AppCompatActivity {
         tvPrice.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
+*/

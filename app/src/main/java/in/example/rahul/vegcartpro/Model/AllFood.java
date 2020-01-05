@@ -4,7 +4,7 @@ package in.example.rahul.vegcartpro.Model;
  * Created by Rahul on 22-04-2018.
  */
 
-public class AllFood {
+/*public class AllFood {
     private String Image;
     private String Name;
     private String NameHindi;
@@ -91,4 +91,4 @@ public class AllFood {
     public void setDat(String dat) {
         Dat = dat;
     }
-}
+}*/

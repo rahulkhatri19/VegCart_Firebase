@@ -4,6 +4,7 @@
     package="in.example.rahul.vegcartpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -16,8 +17,9 @@
         android:roundIcon="@drawable/fruit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.SplashActivity"
+        <activity android:name=".activity.MainActivity" />
+        <activity
+            android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,17 +27,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Detail"
-           android:theme="@style/AppTheme.NoActionBarStyle"/>
-        <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.OrderActivity"
-            android:theme="@style/AppTheme.NoActionBarStyle"/>
-        <activity android:name=".activity.FlowerVegActivity"
-            android:theme="@style/AppTheme.NoActionBarStyle"/>
-        <activity android:name=".activity.ContactActivity"
-            android:theme="@style/AppTheme.NoActionBarStyle"/>
-        <activity android:name=".activity.MyCart"
-            android:theme="@style/AppTheme.NoActionBarStyle"/>
+        <activity
+            android:name=".activity.DetailActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
+        <activity android:name=".activity.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.OrderActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
+        <activity
+            android:name=".activity.FlowerVegActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
+        <activity
+            android:name=".activity.ContactActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
+        <activity
+            android:name=".activity.MyCartActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
 
         <service
             android:name=".utils.MyFirebaseMessagingServiceClass"

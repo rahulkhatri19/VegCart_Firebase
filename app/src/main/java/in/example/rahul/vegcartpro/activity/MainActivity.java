@@ -25,17 +25,18 @@ import in.example.rahul.vegcartpro.R;
 import in.example.rahul.vegcartpro.utils.Config;
 import in.example.rahul.vegcartpro.utils.NotificationUtils;
 
+/*
 public class MainActivity extends AppCompatActivity {
 
-    TextView TvRegistrationId, TvMessage;
+    TextView tvRegistrationId, tvMessage;
     private static final String TAG= MainActivity.class.getSimpleName();
     private BroadcastReceiver registrationBroadcastReceiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TvRegistrationId= findViewById(R.id.tv_registration_id);
-        TvMessage= findViewById(R.id.tv_push_message);
+        tvRegistrationId = findViewById(R.id.tv_registration_id);
+        tvMessage = findViewById(R.id.tv_push_message);
 
         registrationBroadcastReceiver= new BroadcastReceiver() {
             @Override
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                     String message= intent.getStringExtra("message");
                     Toast.makeText(context, "Push notification: "+message, Toast.LENGTH_SHORT).show();
-                    TvMessage.setText(message);
+                    tvMessage.setText(message);
                 }
             }
         };
@@ -68,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, "Firebase reg id: "+regId, null);
 
         if (!TextUtils.isEmpty(regId)){
-            TvRegistrationId.setText("Firebase Reg Id: "+regId);
+            tvRegistrationId.setText("Firebase Reg Id: "+regId);
         } else {
-            TvRegistrationId.setText("Firebase RegId is not received yet!");
+            tvRegistrationId.setText("Firebase RegId is not received yet!");
         }
     }
 
@@ -116,3 +117,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+*/

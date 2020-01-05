@@ -14,7 +14,7 @@ import in.example.rahul.vegcartpro.R;
  * Created by Rahul on 18-06-2018.
  */
 
-public class StartActivity extends AppCompatActivity {
+/*public class StartActivity extends AppCompatActivity {
     public static boolean isAppRunning;
 
     @Override
@@ -54,4 +54,4 @@ public class StartActivity extends AppCompatActivity {
         super.onDestroy();
         isAppRunning = false;
     }
-}
+}*/

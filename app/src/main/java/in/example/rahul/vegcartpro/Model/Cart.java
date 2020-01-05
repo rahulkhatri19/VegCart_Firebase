@@ -4,6 +4,7 @@ package in.example.rahul.vegcartpro.Model;
  * Created by Rahul on 01-05-2018.
  */
 
+/*
 public class Cart {
     private String Name;
     private String Price;
@@ -52,3 +53,4 @@ public class Cart {
         Address = address;
     }
 }
+*/

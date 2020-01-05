@@ -1,8 +1,6 @@
 package in.example.rahul.vegcartpro.activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,25 +8,18 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
-import in.example.rahul.vegcartpro.Interface.ItemClickListener;
-import in.example.rahul.vegcartpro.Model.AllFood;
-import in.example.rahul.vegcartpro.Model.Cart;
+import in.example.rahul.vegcartpro.Model.CartModel;
 import in.example.rahul.vegcartpro.R;
-import in.example.rahul.vegcartpro.ViewHolder.FoodViewHolder;
-import in.example.rahul.vegcartpro.ViewHolder.MenuViewHolder;
 
 public class MyCart extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -69,10 +60,10 @@ public class MyCart extends AppCompatActivity {
 
       //  loadImages();
     }  public void loadData() {
-        FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>().setQuery(allFoodData, Cart.class).setLifecycleOwner(this).build();
-        final FirebaseRecyclerAdapter<Cart, FoodViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, FoodViewHolder>(options) {
+        FirebaseRecyclerOptions<CartModel> options = new FirebaseRecyclerOptions.Builder<CartModel>().setQuery(allFoodData, CartModel.class).setLifecycleOwner(this).build();
+        final FirebaseRecyclerAdapter<CartModel, FoodViewHolder> adapter = new FirebaseRecyclerAdapter<CartModel, FoodViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull FoodViewHolder viewHolder, int position, @NonNull Cart model) {
+            protected void onBindViewHolder(@NonNull FoodViewHolder viewHolder, int position, @NonNull CartModel model) {
                 viewHolder.tvName.setText(model.getName());
                 viewHolder.tvPrice.setText(model.getPrice());
                 viewHolder.tvQuantity.setText(model.getQuantity());

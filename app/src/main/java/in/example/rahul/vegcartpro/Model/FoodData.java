@@ -5,6 +5,7 @@ package in.example.rahul.vegcartpro.Model;
  * Created by Rahul on 12-03-2018.
  */
 
+/*
 public class FoodData {
     private String Image;
     private String Name;
@@ -93,3 +94,4 @@ public class FoodData {
         NameHindi = nameHindi;
     }
 }
+*/

@@ -1,34 +1,6 @@
 package in.example.rahul.vegcartpro.activity;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
-import in.example.rahul.vegcartpro.Interface.ItemClickListener;
-import in.example.rahul.vegcartpro.Model.AllFood;
-import in.example.rahul.vegcartpro.R;
-import in.example.rahul.vegcartpro.utils.SharedPreferenceUtils;
-
+/*
 public class FlowerVegActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase database;
@@ -135,10 +107,12 @@ public class FlowerVegActivity extends AppCompatActivity {
     }
 
 
-    /* public static class UserHolder extends RecyclerView.ViewHolder{
+    */
+/* public static class UserHolder extends RecyclerView.ViewHolder{
          View view;
 
-     }*/
+     }*//*
+
     public class UserHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView txtname, txtnameHindi;
         public ImageView imageView;
@@ -163,7 +137,8 @@ public class FlowerVegActivity extends AppCompatActivity {
         }
 
     }
-   /* private void loadImages() {
+   */
+/* private void loadImages() {
         FirebaseRecyclerAdapter<AllFood, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<AllFood, MenuViewHolder>(AllFood.class, R.layout.food, MenuViewHolder.class,allFoodData) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, AllFood model, int position) {
@@ -207,7 +182,8 @@ public class FlowerVegActivity extends AppCompatActivity {
             }
         };
         recyclerView.setAdapter(adapter);
-    }*/
+    }*//*
+
 
     @Override
     protected void onResume() {
@@ -220,3 +196,4 @@ public class FlowerVegActivity extends AppCompatActivity {
         }
     }
 }
+*/

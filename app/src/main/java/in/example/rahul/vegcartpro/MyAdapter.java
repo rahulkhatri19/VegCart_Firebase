@@ -11,16 +11,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import in.example.rahul.vegcartpro.Model.Item;
+import in.example.rahul.vegcartpro.Model.ItemModel;
 
 /**
  * Created by Rahul on 19-03-2018.
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<Item> itemList;
+    private List<ItemModel> itemList;
     private ClickListener clickListener=null;
-    public MyAdapter(List<Item> itemList){
+    public MyAdapter(List<ItemModel> itemList){
         this.itemList= itemList;
     }
 
@@ -60,7 +60,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position){
-        Item row= itemList.get(position);
+        ItemModel row= itemList.get(position);
         holder.title.setText(row.getTitle());
         holder.subtitle.setText(row.getSubtitle());
         holder.icon.setImageResource(row.getImageId());

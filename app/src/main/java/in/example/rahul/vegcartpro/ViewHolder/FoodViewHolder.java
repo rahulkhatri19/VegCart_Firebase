@@ -2,10 +2,8 @@ package in.example.rahul.vegcartpro.ViewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import in.example.rahul.vegcartpro.Interface.ItemClickListener;
 import in.example.rahul.vegcartpro.R;
 
 /**

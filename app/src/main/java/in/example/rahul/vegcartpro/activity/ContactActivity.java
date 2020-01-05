@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import in.example.rahul.vegcartpro.R;
 
-public class ContactActivity extends AppCompatActivity {
+/*public class ContactActivity extends AppCompatActivity {
     ImageView ib1,ib2,ib3,ib4,ib5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,4 +68,4 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
     }
-}
+}*/
