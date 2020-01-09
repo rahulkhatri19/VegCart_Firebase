@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.Model
 
-class AllFoodModel(var Image: String, var Name: String, var NameHindi: String, var Price: String, var Advt: String, var Vam: String, var Dis: String, var Dat: String) {
+class AllFoodModel(var Image: String="", var Name: String="", var NameHindi: String="", var Price: String="", var Advt: String="", var Vam: String="", var Dis: String="", var Dat: String="") {
 //    private val Image: String? = null
 //    private val Name: String? = null
 //    private val NameHindi: String? = null

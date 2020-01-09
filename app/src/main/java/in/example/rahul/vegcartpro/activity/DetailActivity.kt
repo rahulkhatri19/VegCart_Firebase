@@ -87,7 +87,8 @@ class DetailActivity : AppCompatActivity() {
 // display(numberOfVeg);
             tvQuantity.text = numberOfVeg.toString()
             //  displayPrice(numberOfVeg*priceOfVeg);
-            tvPrice.text = NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
+            val price = numberOfVeg * priceOfVeg
+            tvPrice.text = "₹ $price" //  NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
         }
         btnDecrement.setOnClickListener {
             if (numberOfVeg >= 1) {
@@ -97,7 +98,9 @@ class DetailActivity : AppCompatActivity() {
 //  display(numberOfVeg);
             tvQuantity.text = numberOfVeg.toString()
             // displayPrice(numberOfVeg*priceOfVeg);
-            tvPrice.text = NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
+            val price = numberOfVeg * priceOfVeg
+            tvPrice.text = "₹ $price"
+//            tvPrice.text = NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
         }
         btnOk.setOnClickListener {
             if (etDeliveryAdd.text.toString().trim { it <= ' ' } == "") {

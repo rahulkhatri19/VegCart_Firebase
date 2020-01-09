@@ -21,7 +21,7 @@ class ContactActivity : AppCompatActivity() {
         ib2 = findViewById(R.id.img_btn2)
         ib3 = findViewById(R.id.img_btn3)
         ib4 = findViewById(R.id.img_btn4)
-        ib5 = findViewById(R.id.image)
+//        ib5 = findViewById(R.id.image)
         ib1.setOnClickListener {
             val url = "https://www.facebook.com/rahulkhatri19"
             val web = Uri.parse(url)
