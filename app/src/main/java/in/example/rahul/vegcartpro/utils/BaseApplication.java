@@ -1,7 +1,9 @@
 package in.example.rahul.vegcartpro.utils;
 
 import android.app.Application;
-
+//  Used In payment Gateway mention in manifest
+//  ...  <application
+//        android:name=".utils.BaseApplication"  ...
 public class BaseApplication extends Application {
     AppEnvironment appEnvironment;
 

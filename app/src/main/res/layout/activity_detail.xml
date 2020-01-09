@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cb_grey"
-    tools:context="in.example.rahul.vegcartpro.activity.Detail">
+    tools:context="in.example.rahul.vegcartpro.activity.DetailActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
