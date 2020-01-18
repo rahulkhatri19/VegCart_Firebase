@@ -24,12 +24,12 @@
          android:id="@+id/foodBtn"
          android:onClick="foodVisit"/>
       -->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.65"
         android:scrollbars="vertical"
         android:background="@drawable/ripple"
         android:id="@+id/recyclerView">
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

@@ -5,13 +5,12 @@ import `in`.example.rahul.vegcartpro.R
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
-import java.text.NumberFormat
 
 class DetailActivity : AppCompatActivity() {
     /*  On click recycler view item this activity will open

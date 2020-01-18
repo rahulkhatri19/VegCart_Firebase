@@ -4,11 +4,11 @@ import `in`.example.rahul.vegcartpro.Model.CartModel
 import `in`.example.rahul.vegcartpro.R
 import android.app.ProgressDialog
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,7 +55,7 @@ class MyCartActivity : AppCompatActivity() {
             protected override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
                 viewHolder.tvName.setText(model.Name)
                 viewHolder.tvPrice.setText(model.Price)
-                viewHolder.tvQuantity.setText(model.Price)
+                viewHolder.tvQuantity.setText(model.Quantity)
                 viewHolder.tvAddress.setText(model.Address)
                 progressDialog!!.dismiss()
             }

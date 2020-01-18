@@ -18,4 +18,5 @@
     <string name="notifications_admin_channel_name">Global channel</string>
     <string name="notifications_admin_channel_description">Notifications sent from the app admin</string>
     <string name="default_notification_channel_id">Channel ID</string>
+    <string name="data_not_available">Data not Available</string>
 </resources>

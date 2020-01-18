@@ -8,10 +8,10 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -53,9 +53,10 @@ class FlowerVegActivity : AppCompatActivity() {
         progressDialog!!.setMessage("Please wait ...")
         progressDialog!!.setCancelable(false)
         progressDialog!!.show()
-        rlNoData?.setVisibility(View.GONE)
+
+        rlNoData?.visibility = View.GONE
         recyclerView?.setHasFixedSize(true)
-        recyclerView?.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false))
+        recyclerView?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         if (SharedPreferenceUtils(this).getFlowerVeg() != "null") {
             rlNoData?.visibility = View.GONE
             recyclerView?.visibility = View.VISIBLE

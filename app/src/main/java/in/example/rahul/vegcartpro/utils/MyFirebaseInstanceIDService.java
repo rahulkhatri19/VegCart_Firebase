@@ -2,7 +2,7 @@ package in.example.rahul.vegcartpro.utils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 
 
@@ -39,6 +39,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         SharedPreferences pref= getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         SharedPreferences.Editor editor= pref.edit();
         editor.putString("regId", token);
-        editor.commit();
+        editor.apply();
     }
 }
