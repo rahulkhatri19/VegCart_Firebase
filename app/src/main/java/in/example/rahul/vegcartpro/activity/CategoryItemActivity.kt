@@ -75,6 +75,13 @@ class CategoryItemActivity : AppCompatActivity() {
                         bundle.putString("deta3", diseaseHeal)
                         bundle.putString("deta4", precautions)
                         bundle.putString("deta5", price)
+
+                        bundle.putString("advantage", foodAdvantage)
+                        bundle.putString("vitamins", vitamins)
+                        bundle.putString("diseaseHeal", diseaseHeal)
+                        bundle.putString("precautions", precautions)
+                        bundle.putString("price", price)
+
                         intent.putExtras(bundle)
                         startActivity(intent)
                     }

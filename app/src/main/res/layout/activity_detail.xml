@@ -25,7 +25,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/iv_food"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@drawable/background_white"
@@ -38,7 +38,7 @@
                 android:id="@+id/like"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:layout_below="@+id/imageView"
+                android:layout_below="@+id/iv_food"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp" />
 
@@ -46,7 +46,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView"
+                android:layout_below="@+id/iv_food"
                 android:background="@drawable/background_white"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -62,7 +62,7 @@
                 android:layout_height="40dp"
                 android:padding="8dp"
                 android:background="@drawable/background_white"
-                android:layout_below="@+id/imageView"
+                android:layout_below="@+id/iv_food"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:onClick="orderCart"
@@ -87,7 +87,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/tv_t1"
+                    android:id="@+id/tv_title_advt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/title"
@@ -98,76 +98,76 @@
                     android:textAppearance="?android:textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/tv_d1"
+                    android:id="@+id/tv_detail_advt"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_t1"
+                    android:layout_below="@+id/tv_title_advt"
                     android:layout_marginTop="10dp"
-                    android:text="@string/rahul"
+                    android:text="Advantages"
                     android:textAppearance="?android:textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/tv_t2"
+                    android:id="@+id/tv_title_vitamin"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_d1"
+                    android:layout_below="@+id/tv_detail_advt"
                     android:layout_marginTop="10dp"
                     android:text="Vitamin &amp; Mineral"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/tv_d2"
+                    android:id="@+id/tv_detail_vitamin"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_t2"
+                    android:layout_below="@+id/tv_title_vitamin"
                     android:layout_marginTop="10dp"
-                    android:text="@string/rahul"
+                    android:text="Vitamins"
                     android:textAppearance="?android:textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/tv_t3"
+                    android:id="@+id/tv_title_disease"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_d2"
+                    android:layout_below="@+id/tv_detail_vitamin"
                     android:layout_marginTop="10dp"
                     android:text="@string/help_heal"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/tv_d3"
+                    android:id="@+id/tv_detail_disease"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_t3"
+                    android:layout_below="@+id/tv_title_disease"
                     android:layout_marginTop="10dp"
-                    android:text="@string/text"
+                    android:text="Heal Disease"
                     android:textAppearance="?android:textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/tv_t4"
+                    android:id="@+id/tv_title_precaution"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_d3"
+                    android:layout_below="@+id/tv_detail_disease"
                     android:layout_marginTop="10dp"
                     android:text="@string/precautions"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/tv_d4"
+                    android:id="@+id/tv_detail_precaution"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_t4"
+                    android:layout_below="@+id/tv_title_precaution"
                     android:layout_marginTop="10dp"
-                    android:text="@string/text"
+                    android:text="Precautions"
                     android:textAppearance="?android:textAppearanceMedium" />
 
             </RelativeLayout>
