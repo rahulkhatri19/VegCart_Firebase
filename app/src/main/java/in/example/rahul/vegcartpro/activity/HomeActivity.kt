@@ -8,6 +8,8 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import com.google.android.material.navigation.NavigationView
@@ -32,6 +34,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView
 import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListener
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
+import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, MyAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -51,16 +54,18 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         toolbar.title = "Menu"
         sliderLayout = findViewById(R.id.slider)
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        recyclerView = findViewById(R.id.recyclerView)
+
         if (!isOnline()) {
             alertDialog()
         }
         val toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close)
-        drawer.setDrawerListener(toggle)
+        drawer.addDrawerListener(toggle)
         toggle.syncState()
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-        val headerView = navigationView.getHeaderView(0)
-        val txtFullName = headerView.findViewById<TextView>(R.id.txtFullName)
+//        val headerView = navigationView.getHeaderView(0)
+//        val txtFullName = headerView.findViewById<TextView>(R.id.txtFullName)
         // recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
 // layoutManager.
 // Call below method if you want images online
@@ -82,7 +87,6 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         sliderLayout?.setDuration(3000)
         sliderLayout?.addOnPageChangeListener(this@HomeActivity)
         // Bottom
-        recyclerView = findViewById(R.id.recyclerView)
         prepareItem()
         adapter = MyAdapter(itemList)
         adapter?.setClickListener(this)
@@ -114,29 +118,18 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
 
     override fun onSliderClick(slider: BaseSliderView) {
 
-        Log.e("silder clicked:", " ${slider.bundle["extra"]}")
+//        Log.e("silder clicked:", " ${slider.bundle["extra"]}")
         //  Toast.makeText(this,slider.getBundle().get("extra")+ "",Toast.LENGTH_SHORT).show();
     }
 
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
 
     override fun onPageSelected(position: Int) {
-        Log.d("Slider Demo", "Page Change:$position")
+//        Log.d("Slider Demo", "Page Change:$position")
     }
 
     override fun onPageScrollStateChanged(state: Int) {}
 
-    /*public void foodVisit(View view) {
-        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
-        startActivity(intent);
-    }*/
-
-    // Bottom
-
-    /*public void foodVisit(View view) {
-        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
-        startActivity(intent);
-    }*/
 // Bottom
     private fun prepareItem() {
 //        var item = Item(R.drawable.shutterstock, "Flower", "Price is 30")
@@ -163,9 +156,9 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
 
     // Navigation Drawer
     override fun onBackPressed() {
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
+//        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             if (doubleBackToExitPressedOnce) {
                 super.onBackPressed()
@@ -179,43 +172,24 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.home, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return super.onOptionsItemSelected(item)
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.fruit -> {
-                SharedPreferenceUtils(this).setFlowerVeg("fruit")
-                startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
-            }
-            R.id.salid -> {
-                SharedPreferenceUtils(this).setFlowerVeg("salad")
-                startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
-            }
-            R.id.flower -> {
-                SharedPreferenceUtils(this).setFlowerVeg("flower")
-                startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
-            }
-            R.id.leaves -> {
-                SharedPreferenceUtils(this).setFlowerVeg("leaves")
-                startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
-            }
-            R.id.root -> {
-                SharedPreferenceUtils(this).setFlowerVeg("root")
-                startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
-            }
+            R.id.fruit -> navigationItemActivity("fruit")
+            R.id.salid -> navigationItemActivity("salad")
+            R.id.flower -> navigationItemActivity("flower")
+            R.id.leaves -> navigationItemActivity("leaves")
+            R.id.root -> navigationItemActivity("root")
             R.id.nav_send -> startActivity(Intent(this@HomeActivity, ContactActivity::class.java))
             R.id.mycart -> startActivity(Intent(this@HomeActivity, MyCartActivity::class.java))
         }
         val drawerLayout = findViewById<androidx.drawerlayout.widget.DrawerLayout>(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun navigationItemActivity(stSharedPref: String) {
+        SharedPreferenceUtils(this).setFlowerVeg(stSharedPref)
+        startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
     }
 
     private fun alertDialog() {
@@ -238,7 +212,31 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     }
 
     private fun isOnline(): Boolean {
+        val result: Boolean
         val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            val networkCapabilities = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+
+            result = when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> false
+            }
+        } else {
+            result = connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
+//            connectivityManager.run {
+//                connectivityManager.activeNetworkInfo ?.run {
+//                    result = when(type) {
+//                        ConnectivityManager.TYPE_WIFI -> true
+//                        ConnectivityManager.TYPE_MOBILE -> true
+//                        ConnectivityManager.TYPE_ETHERNET -> true
+//                        else -> false
+//                    }
+//                }
+//            }
+        }
+        return result
     }
 }
