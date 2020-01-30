@@ -144,14 +144,14 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     override fun itemClicked(view: View?, position: Int) {
 
         when (position) {
-            0 -> SharedPreferenceUtils(this).setFlowerVeg("flower")
-            1 -> SharedPreferenceUtils(this).setFlowerVeg("fruit")
-            2 -> SharedPreferenceUtils(this).setFlowerVeg("leaves")
-            3 -> SharedPreferenceUtils(this).setFlowerVeg("root")
-            4 -> SharedPreferenceUtils(this).setFlowerVeg("salad")
+            0 -> SharedPreferenceUtils(this).setCategoryItem("flower")
+            1 -> SharedPreferenceUtils(this).setCategoryItem("fruit")
+            2 -> SharedPreferenceUtils(this).setCategoryItem("leaves")
+            3 -> SharedPreferenceUtils(this).setCategoryItem("root")
+            4 -> SharedPreferenceUtils(this).setCategoryItem("salad")
             else -> Log.e("position :", position.toString())
         }
-        startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java).putExtra("ItemPosition ", position))
+        startActivity(Intent(this@HomeActivity, CategoryItemActivity::class.java).putExtra("ItemPosition ", position))
     }
 
     // Navigation Drawer
@@ -188,8 +188,8 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     }
 
     private fun navigationItemActivity(stSharedPref: String) {
-        SharedPreferenceUtils(this).setFlowerVeg(stSharedPref)
-        startActivity(Intent(this@HomeActivity, FlowerVegActivity::class.java))
+        SharedPreferenceUtils(this).setCategoryItem(stSharedPref)
+        startActivity(Intent(this@HomeActivity, CategoryItemActivity::class.java))
     }
 
     private fun alertDialog() {

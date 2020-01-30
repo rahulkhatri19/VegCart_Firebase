@@ -32,4 +32,14 @@ init {
     fun getFlowerVeg(): String? {
         return if (pref!!.contains("id")) pref?.getString("id", "") else "null"
     }
+
+    fun setCategoryItem(veg: String?) {
+        val editor = pref?.edit()
+        editor?.putString("id", veg)
+        editor?.apply()
+    }
+
+    fun getCategoryItem(): String? {
+        return if (pref!!.contains("id")) pref?.getString("id", "") else "null"
+    }
 }

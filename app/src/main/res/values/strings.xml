@@ -2,8 +2,6 @@
     <string name="app_name">VegCartPro</string>
     <string name="some_natural_fact">Some Natural Fact :</string>
     <string name="visit_food">Visit Food</string>
-    <string name="rahul">rahul</string>
-    <string name="text">text</string>
     <string name="benefits">Benefits</string>
     <string name="precautions">Precautions</string>
     <string name="help_heal">Help to heal</string>
@@ -20,4 +18,12 @@
     <string name="default_notification_channel_id">Channel ID</string>
     <string name="data_not_available">Data not Available</string>
     <string name="logo">Logo</string>
+    <string name="food_item_image">Food Item Image</string>
+    <string name="vegetable_name">Vegetable Name</string>
+    <string name="vegetable_name_in_hindi">Vegetable name in hindi</string>
+    <string name="add_to_cart">add to Cart</string>
+    <string name="advantages">Advantages</string>
+    <string name="heal_disease">Heal Disease</string>
+    <string name="vitamin_amp_mineral"><![CDATA[Vitamin & Mineral]]></string>
+    <string name="vitamins">Vitamins</string>
 </resources>

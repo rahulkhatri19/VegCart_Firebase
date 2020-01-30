@@ -51,7 +51,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
     // Onclick cart image send to Order Activity
-    fun orderCart(view: View?) { /*Intent intent= new Intent(Detail.this, OrderActivity.class);
+    fun orderCart(view: View?) {
+        /*Intent intent= new Intent(Detail.this, OrderActivity.class);
         Bundle bundle=new Bundle();
         bundle.putString("namefood",foodName);
         bundle.putString("pricefood",pricefood);
@@ -114,7 +115,12 @@ class DetailActivity : AppCompatActivity() {
         super.onResume()
         val ab = supportActionBar
         if (ab != null) {
-            ab.title = "Product Detail"
+            if(foodName.equals("")){
+                ab.title = "Food Description"
+            } else {
+                ab.title = foodName
+            }
+
             ab.setDisplayHomeAsUpEnabled(true)
         }
     }

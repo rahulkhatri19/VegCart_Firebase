@@ -20,8 +20,9 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:id="@+id/image"
-            android:scaleType="fitCenter"
-            android:src="@drawable/cauliflower" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/cauliflower"
+            android:contentDescription="@string/food_item_image" />
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -34,7 +35,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Vegetable Name"
+                android:text="@string/vegetable_name"
                 android:layout_marginTop="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
@@ -46,7 +47,7 @@
                 android:id="@+id/nameHindi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Vegetable in hindi"
+                android:text="@string/vegetable_name_in_hindi"
                 android:layout_below="@+id/name"
                 android:textSize="18sp"
                 android:paddingTop="8dp"

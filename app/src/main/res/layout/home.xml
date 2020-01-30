@@ -13,23 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.35"
-        android:id="@+id/slider">
+        android:id="@+id/slider"/>
 
-    </com.daimajia.slider.library.SliderLayout>
-    <!-- <Button
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="@string/visit_food"
-         android:padding="10dp"
-         android:id="@+id/foodBtn"
-         android:onClick="foodVisit"/>
-      -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.65"
         android:scrollbars="vertical"
         android:background="@drawable/ripple"
-        android:id="@+id/recyclerView">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:id="@+id/recyclerView"/>
+
 </LinearLayout>
