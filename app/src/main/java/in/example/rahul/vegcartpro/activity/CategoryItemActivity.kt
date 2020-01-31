@@ -3,6 +3,7 @@ package `in`.example.rahul.vegcartpro.activity
 import `in`.example.rahul.vegcartpro.Interface.ItemClickListener
 import `in`.example.rahul.vegcartpro.Model.AllFoodModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.utils.CustomProgressBar
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.app.ProgressDialog
 import android.content.Intent
@@ -39,7 +40,7 @@ class CategoryItemActivity : AppCompatActivity() {
     var vitamins = ""
     var precautions = ""
     var price = ""
-    var progressDialog: ProgressDialog? = null
+//    var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,10 +50,11 @@ class CategoryItemActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
         recyclerView = findViewById(R.id.recyclerView)
         rlNoData = findViewById(R.id.rl_no_data)
-        progressDialog = ProgressDialog(this)
-        progressDialog?.setMessage("Please wait ...")
-        progressDialog?.setCancelable(false)
-        progressDialog?.show()
+        CustomProgressBar.ProgressBar(this, "Please Wait ...")
+//        progressDialog = ProgressDialog(this)
+//        progressDialog?.setMessage("Please wait ...")
+//        progressDialog?.setCancelable(false)
+//        progressDialog?.show()
 
         rlNoData?.visibility = View.GONE
         recyclerView?.setHasFixedSize(true)
@@ -63,11 +65,13 @@ class CategoryItemActivity : AppCompatActivity() {
             database = FirebaseDatabase.getInstance()
             // allFoodData= database.getReference("AllFood/flower");
             allFoodData = database!!.getReference("AllFood/" + SharedPreferenceUtils(this).getCategoryItem())
-            progressDialog?.show()
+//            progressDialog?.show()
+            CustomProgressBar.ProgressBar(this, "Please Wait ...")
         } else {
             rlNoData?.visibility = View.VISIBLE
             recyclerView?.visibility = View.GONE
-            progressDialog!!.dismiss()
+//            progressDialog!!.dismiss()
+            CustomProgressBar.DismissProgressBar()
         }
         // loadImages();
         loadData()
@@ -85,7 +89,8 @@ class CategoryItemActivity : AppCompatActivity() {
                 viewHolder.txtNameHindi.setText(model.NameHindi)
                 val face2 = Typeface.createFromAsset(assets, "fonts/K11.TTF")
                 // Log.e("prog", "3");
-                progressDialog!!.dismiss()
+//                progressDialog!!.dismiss()
+                CustomProgressBar.DismissProgressBar()
                 viewHolder.txtNameHindi.typeface = face2
                 val clickItem: AllFoodModel = model
                 viewHolder.setItemClickListener(object : ItemClickListener {
@@ -152,6 +157,7 @@ class CategoryItemActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+//        CustomProgressBar.ProgressBar(this, "Please Wait ...")
         /*progressDialog = ProgressDialog(this)
         progressDialog?.setMessage("Please wait ...")
         progressDialog?.setCancelable(false)
