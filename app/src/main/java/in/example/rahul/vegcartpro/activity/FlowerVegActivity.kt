@@ -80,7 +80,7 @@ class FlowerVegActivity : AppCompatActivity() {
                 Picasso.with(baseContext).load(model.Image).placeholder(R.drawable.placeholder).into(viewHolder.imageView)
                 viewHolder.txtName.setText(model.Name)
                 viewHolder.txtNameHindi.setText(model.NameHindi)
-                val face2 = Typeface.createFromAsset(assets, "fonts/K11.TTF")
+                val face2 = Typeface.createFromAsset(assets, "")
                 // Log.e("prog", "3");
                 progressDialog!!.dismiss()
                 viewHolder.txtNameHindi.typeface = face2
@@ -116,7 +116,7 @@ class FlowerVegActivity : AppCompatActivity() {
             }
 
             override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): UserHolder {
-                val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.food, viewGroup, false)
+                val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.food_layout, viewGroup, false)
                 return UserHolder(view)
             }
         }
@@ -145,20 +145,20 @@ class FlowerVegActivity : AppCompatActivity() {
         }
 
         init {
-            txtName = itemView.findViewById(R.id.name)
-            txtNameHindi = itemView.findViewById(R.id.nameHindi)
-            imageView = itemView.findViewById(R.id.image)
+            txtName = itemView.findViewById(R.id.tv_name)
+            txtNameHindi = itemView.findViewById(R.id.tv_name_hindi)
+            imageView = itemView.findViewById(R.id.iv_food)
             itemView.setOnClickListener(this)
         }
     }
     /* private void loadImages() {
-        FirebaseRecyclerAdapter<AllFood, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<AllFood, MenuViewHolder>(AllFood.class, R.layout.food, MenuViewHolder.class,allFoodData) {
+        FirebaseRecyclerAdapter<AllFood, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<AllFood, MenuViewHolder>(AllFood.class, R.layout.food_layout, MenuViewHolder.class,allFoodData) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, AllFood model, int position) {
                 Picasso.with(getBaseContext()).load(model.getImage()).placeholder(R.drawable.placeholder).into(viewHolder.imageView);
                 viewHolder.txtname.setText(model.getName());
                 viewHolder.txtnameHindi.setText(model.getNameHindi());
-                Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/K11.TTF");
+                Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/KrutiHindi.TTF");
 
                 viewHolder.txtnameHindi.setTypeface(face2);
                 final AllFood clickItem= model;
@@ -198,13 +198,13 @@ class FlowerVegActivity : AppCompatActivity() {
     }*/
 
     /* private void loadImages() {
-        FirebaseRecyclerAdapter<AllFood, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<AllFood, MenuViewHolder>(AllFood.class, R.layout.food, MenuViewHolder.class,allFoodData) {
+        FirebaseRecyclerAdapter<AllFood, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<AllFood, MenuViewHolder>(AllFood.class, R.layout.food_layout, MenuViewHolder.class,allFoodData) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, AllFood model, int position) {
                 Picasso.with(getBaseContext()).load(model.getImage()).placeholder(R.drawable.placeholder).into(viewHolder.imageView);
                 viewHolder.txtname.setText(model.getName());
                 viewHolder.txtnameHindi.setText(model.getNameHindi());
-                Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/K11.TTF");
+                Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/KrutiHindi.TTF");
 
                 viewHolder.txtnameHindi.setTypeface(face2);
                 final AllFood clickItem= model;

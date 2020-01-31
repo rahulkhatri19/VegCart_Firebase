@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:background="@color/cb_grey">
+    android:padding="16dp">
 
     <ProgressBar
         android:id="@+id/progress_circular"
@@ -21,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
+        android:textColor="@color/light_green"
         android:fontFamily="sans-serif"
         android:text="Please wait ..."
         app:layout_constraintStart_toStartOf="parent"

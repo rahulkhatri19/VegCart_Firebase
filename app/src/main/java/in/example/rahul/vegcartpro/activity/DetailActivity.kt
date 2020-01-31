@@ -96,17 +96,17 @@ class DetailActivity : AppCompatActivity() {
                 etDeliveryAdd.error = "Please Enter Delivery Address"
                 etDeliveryAdd.requestFocus()
                 // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
-            } else { // Toast.makeText(Detail.this, "Price: " + tvPrice.getText().toString() + "\nQuantity: " + tvQuantity.getText().toString() + "\nAddress: " + etDeliveryAdd.getText().toString(), Toast.LENGTH_SHORT).show();
+            } else {
                 val database = FirebaseDatabase.getInstance()
                 val ref = database.getReference("Cart")
                 val newPostRef = ref.push()
-                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString()))
+                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString(), image))
                 Toast.makeText(baseContext, "Order Placed Successfully \n Thank you", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, HomeActivity::class.java))
             }
         }
         builder.setCancelable(false)
-        val alert = builder.create()
+        val alert:AlertDialog = builder.create()
         btnCancel.setOnClickListener { alert.dismiss() }
         alert.show()
     }
@@ -124,16 +124,4 @@ class DetailActivity : AppCompatActivity() {
             ab.setDisplayHomeAsUpEnabled(true)
         }
     }
-
-    // display the quantity between + and - button
-/*
-    private void display(double i) {
-        tvQuantity.setText(""+i);
-    }
-*/
-    // display price onclick +,- button
-    /* private void displayPrice(double number) {
-
-        tvPrice.setText(NumberFormat.getCurrencyInstance().format(number));
-    }*/
 }

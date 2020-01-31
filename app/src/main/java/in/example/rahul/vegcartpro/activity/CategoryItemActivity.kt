@@ -5,12 +5,10 @@ import `in`.example.rahul.vegcartpro.Model.AllFoodModel
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.CustomProgressBar
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
-import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +16,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
@@ -50,7 +49,7 @@ class CategoryItemActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
         recyclerView = findViewById(R.id.recyclerView)
         rlNoData = findViewById(R.id.rl_no_data)
-        CustomProgressBar.ProgressBar(this, "Please Wait ...")
+        CustomProgressBar.progressBar(this, "Please Wait ...")
 //        progressDialog = ProgressDialog(this)
 //        progressDialog?.setMessage("Please wait ...")
 //        progressDialog?.setCancelable(false)
@@ -66,14 +65,13 @@ class CategoryItemActivity : AppCompatActivity() {
             // allFoodData= database.getReference("AllFood/flower");
             allFoodData = database!!.getReference("AllFood/" + SharedPreferenceUtils(this).getCategoryItem())
 //            progressDialog?.show()
-            CustomProgressBar.ProgressBar(this, "Please Wait ...")
+            CustomProgressBar.progressBar(this, "Please Wait ...")
         } else {
             rlNoData?.visibility = View.VISIBLE
             recyclerView?.visibility = View.GONE
 //            progressDialog!!.dismiss()
-            CustomProgressBar.DismissProgressBar()
+            CustomProgressBar.dismissProgressBar()
         }
-        // loadImages();
         loadData()
     }
 
@@ -84,14 +82,14 @@ class CategoryItemActivity : AppCompatActivity() {
 
             override fun onBindViewHolder(viewHolder: CategoryItemHolder, position: Int, model: AllFoodModel) {
 
-                Picasso.with(baseContext).load(model.Image).placeholder(R.drawable.placeholder).into(viewHolder.imageView)
-                viewHolder.txtName.setText(model.Name)
-                viewHolder.txtNameHindi.setText(model.NameHindi)
-                val face2 = Typeface.createFromAsset(assets, "fonts/K11.TTF")
-                // Log.e("prog", "3");
+                Picasso.with(baseContext).load(model.Image).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)
+                viewHolder.tvName.setText(model.Name)
+                viewHolder.tvNameHindi.setText(model.NameHindi)
+//                val typeface = Typeface.createFromAsset(assets, "fonts/KrutiHindi")
+                val typeface = ResourcesCompat.getFont(this@CategoryItemActivity, R.font.krutihindi)
 //                progressDialog!!.dismiss()
-                CustomProgressBar.DismissProgressBar()
-                viewHolder.txtNameHindi.typeface = face2
+                CustomProgressBar.dismissProgressBar()
+                viewHolder.tvNameHindi.typeface = typeface
                 val clickItem: AllFoodModel = model
                 viewHolder.setItemClickListener(object : ItemClickListener {
                     override fun onClick(view: View?, position: Int, isLongClick: Boolean) {
@@ -124,21 +122,21 @@ class CategoryItemActivity : AppCompatActivity() {
             }
 
             override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): CategoryItemHolder {
-                val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.food, viewGroup, false)
+                val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.food_layout, viewGroup, false)
                 return CategoryItemHolder(view)
             }
         }
-        // Log.e("prog", "1");
         recyclerView!!.adapter = adapter
-        //  Log.e("prog", "2");
 //  progressDialog.dismiss();
     }
 
     class CategoryItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        var txtName: TextView
-        var txtNameHindi: TextView
-        var imageView: ImageView
+        var tvName: TextView = itemView.findViewById(R.id.tv_name)
+        var tvNameHindi: TextView = itemView.findViewById(R.id.tv_name_hindi)
+        var ivFood: ImageView = itemView.findViewById(R.id.iv_food)
+
         private var itemClickListener: ItemClickListener? = null
+
         fun setItemClickListener(itemClickListener: ItemClickListener?) {
             this.itemClickListener = itemClickListener
         }
@@ -148,9 +146,6 @@ class CategoryItemActivity : AppCompatActivity() {
         }
 
         init {
-            txtName = itemView.findViewById(R.id.name)
-            txtNameHindi = itemView.findViewById(R.id.nameHindi)
-            imageView = itemView.findViewById(R.id.image)
             itemView.setOnClickListener(this)
         }
     }

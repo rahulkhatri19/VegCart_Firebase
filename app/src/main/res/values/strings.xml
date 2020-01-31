@@ -7,7 +7,7 @@
     <string name="help_heal">Help to heal</string>
     <string name="open">Open Navigation drawer</string>
     <string name="close">Close Navigation drawer</string>
-    <string name="address">Kota, Rajasthan</string>
+    <string name="office_address">Kota, Rajasthan</string>
     <string name="contact_us">Contact Us</string>
     <string name="slogan">WE Provide Fresh food</string>
 
@@ -26,4 +26,8 @@
     <string name="heal_disease">Heal Disease</string>
     <string name="vitamin_amp_mineral"><![CDATA[Vitamin & Mineral]]></string>
     <string name="vitamins">Vitamins</string>
+    <string name="ordered_food_image">ordered food image</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="address">Address</string>
 </resources>
