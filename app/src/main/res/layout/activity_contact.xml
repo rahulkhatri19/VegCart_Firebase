@@ -1,90 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp" tools:context="in.example.rahul.vegcartpro.activity.ContactActivity">
-    <ScrollView
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".activity.ContactActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_brand_logo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/brand_logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rklogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_slogan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="30dp"
+            android:text="@string/slogan"
+            android:textAlignment="center"
+            android:textColor="#00796B"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_brand_logo" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rklogo" />
+        <TextView
+            android:id="@+id/tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="monospace"
+            android:text="@string/contact_us"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_slogan" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="30dp"
-                android:text="@string/slogan"
-                android:textColor="#00796B"
-                android:textSize="25sp"
-                android:textAlignment="center"
-                android:textStyle="bold|italic"
-                tools:paddingHorizontal="10dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/contact_us"
-                android:textSize="35sp"
-                android:fontFamily="monospace"
-                android:layout_marginTop="100dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/office_address"
-                android:textSize="20sp"
-                android:fontFamily="monospace"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_office_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="@string/office_address"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/facebook4"
-                    android:layout_weight="1"
-                    android:id="@+id/img_btn1"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/octocat"
-                    android:layout_weight="1"
-                    android:id="@+id/img_btn2"
-                    android:scaleType="fitCenter"/>
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/linkedin2"
-                    android:layout_weight="1"
-                    android:id="@+id/img_btn3"
-                    android:background="@android:color/white"
-                    android:scaleType="fitCenter"/>
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/ic_twitter"
-                    android:layout_weight="1"
-                    android:id="@+id/img_btn4"
-                    android:scaleType="fitCenter"/>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/gmail_id"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_office_add" />
+
+        <TextView
+            android:id="@+id/tv_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_github"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/github_profile"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_gmail" />
+
+        <TextView
+            android:id="@+id/tv_twitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_twitter"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/twitter_profile"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_github" />
+
+        <TextView
+            android:id="@+id/tv_linkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_linkedin"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/linkedin_profile"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_twitter" />
+
+        <TextView
+            android:id="@+id/tv_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_facebook"
+            android:drawablePadding="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/facebook_profile"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_linkedin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 

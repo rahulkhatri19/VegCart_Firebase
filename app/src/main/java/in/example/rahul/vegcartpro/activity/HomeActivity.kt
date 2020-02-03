@@ -35,6 +35,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListe
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.home.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, MyAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {

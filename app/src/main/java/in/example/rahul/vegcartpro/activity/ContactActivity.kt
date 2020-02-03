@@ -5,54 +5,40 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
-    private lateinit var ib1: ImageView
-    private lateinit var ib2: ImageView
-    private lateinit var ib3: ImageView
-    private lateinit var ib4: ImageView
-    private lateinit var ib5: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact)
-        ib1 = findViewById(R.id.img_btn1)
-        ib2 = findViewById(R.id.img_btn2)
-        ib3 = findViewById(R.id.img_btn3)
-        ib4 = findViewById(R.id.img_btn4)
-//        ib5 = findViewById(R.id.image)
-        ib1.setOnClickListener {
-            val url = "https://www.facebook.com/rahulkhatri19"
-            val web = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, web)
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
+
+        tv_facebook.setOnClickListener {
+            val web = Uri.parse("https://www.facebook.com/rahulkhatri19")
+            openBrowser(web)
         }
-        ib2.setOnClickListener {
-            val url = "https://github.com/rahulkhatri19"
-            val web = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, web)
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
+        tv_github.setOnClickListener {
+            val web = Uri.parse("https://github.com/rahulkhatri19")
+            openBrowser(web)
         }
-        ib3.setOnClickListener {
-            val url = "https://linkedin.com/in/rahulkhatri19"
-            val web = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, web)
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
+        tv_linkedin.setOnClickListener {
+            val web = Uri.parse("https://linkedin.com/in/rahulkhatri19")
+            openBrowser(web)
         }
-        ib4.setOnClickListener {
-            val url = "https://twitter.com/rahulkhatri019"
-            val web = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, web)
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
+        tv_twitter.setOnClickListener {
+            val web = Uri.parse("https://twitter.com/rahulkhatri019")
+            openBrowser(web)
+        }
+        tv_gmail.setOnClickListener {
+            val web = Uri.parse("mailto:khatri.rahul019@gmail.com")
+            openBrowser(web)
+        }
+    }
+
+    private fun openBrowser(web: Uri?) {
+        val intent = Intent(Intent.ACTION_VIEW, web)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
         }
     }
 }

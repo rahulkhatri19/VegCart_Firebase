@@ -30,4 +30,11 @@
     <string name="price">Price</string>
     <string name="quantity">Quantity</string>
     <string name="address">Address</string>
+    <string name="brand_logo">Brand Logo</string>
+    <string name="github_profile">github.com/rahulkhatri19</string>
+    <string name="twitter_profile">twitter.com/rahulkhatri019</string>
+    <string name="linkedin_profile">linkedin.com/in/rahulkhatri19</string>
+    <string name="facebook_profile">facebook.com/rahulkhatri19</string>
+    <string name="gmail_id">khatri.rahul019@gmail.com</string>
+    <string name="please_wait">Please Wait ...</string>
 </resources>

@@ -6,7 +6,6 @@ import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.CustomProgressBar
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.content.Intent
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -65,11 +64,10 @@ class CategoryItemActivity : AppCompatActivity() {
             // allFoodData= database.getReference("AllFood/flower");
             allFoodData = database!!.getReference("AllFood/" + SharedPreferenceUtils(this).getCategoryItem())
 //            progressDialog?.show()
-            CustomProgressBar.progressBar(this, "Please Wait ...")
+            CustomProgressBar.showProgressbar()
         } else {
             rlNoData?.visibility = View.VISIBLE
             recyclerView?.visibility = View.GONE
-//            progressDialog!!.dismiss()
             CustomProgressBar.dismissProgressBar()
         }
         loadData()
@@ -87,7 +85,6 @@ class CategoryItemActivity : AppCompatActivity() {
                 viewHolder.tvNameHindi.setText(model.NameHindi)
 //                val typeface = Typeface.createFromAsset(assets, "fonts/KrutiHindi")
                 val typeface = ResourcesCompat.getFont(this@CategoryItemActivity, R.font.krutihindi)
-//                progressDialog!!.dismiss()
                 CustomProgressBar.dismissProgressBar()
                 viewHolder.tvNameHindi.typeface = typeface
                 val clickItem: AllFoodModel = model
@@ -127,7 +124,6 @@ class CategoryItemActivity : AppCompatActivity() {
             }
         }
         recyclerView!!.adapter = adapter
-//  progressDialog.dismiss();
     }
 
     class CategoryItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
