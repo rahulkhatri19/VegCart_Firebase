@@ -1,7 +1,7 @@
 package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.Interface.ItemClickListener
-import `in`.example.rahul.vegcartpro.Model.AllFoodModel
+import `in`.example.rahul.vegcartpro.Model.FoodDetailModel
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.CustomProgressBar
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
@@ -74,30 +74,30 @@ class CategoryItemActivity : AppCompatActivity() {
     }
 
     fun loadData() {
-        val options: FirebaseRecyclerOptions<AllFoodModel> = FirebaseRecyclerOptions.Builder<AllFoodModel>().setQuery(allFoodData!!, AllFoodModel::class.java).setLifecycleOwner(this).build()
+        val options: FirebaseRecyclerOptions<FoodDetailModel> = FirebaseRecyclerOptions.Builder<FoodDetailModel>().setQuery(allFoodData!!, FoodDetailModel::class.java).setLifecycleOwner(this).build()
 
-        val adapter: FirebaseRecyclerAdapter<AllFoodModel, CategoryItemHolder> = object : FirebaseRecyclerAdapter<AllFoodModel, CategoryItemHolder>(options) {
+        val adapter: FirebaseRecyclerAdapter<FoodDetailModel, CategoryItemHolder> = object : FirebaseRecyclerAdapter<FoodDetailModel, CategoryItemHolder>(options) {
 
-            override fun onBindViewHolder(viewHolder: CategoryItemHolder, position: Int, model: AllFoodModel) {
+            override fun onBindViewHolder(viewHolder: CategoryItemHolder, position: Int, model: FoodDetailModel) {
 
-                Picasso.with(baseContext).load(model.Image).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)
-                viewHolder.tvName.setText(model.Name)
-                viewHolder.tvNameHindi.setText(model.NameHindi)
+                Picasso.with(baseContext).load(model.foodImage).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)
+                viewHolder.tvName.setText(model.foodName)
+                viewHolder.tvNameHindi.setText(model.foodNameHindi)
 //                val typeface = Typeface.createFromAsset(assets, "fonts/KrutiHindi")
                 val typeface = ResourcesCompat.getFont(this@CategoryItemActivity, R.font.krutihindi)
                 CustomProgressBar.dismissProgressBar()
                 viewHolder.tvNameHindi.typeface = typeface
-                val clickItem: AllFoodModel = model
+                val clickItem: FoodDetailModel = model
                 viewHolder.setItemClickListener(object : ItemClickListener {
                     override fun onClick(view: View?, position: Int, isLongClick: Boolean) {
-                        foodName = clickItem.Name
-                        foodNameHindi = clickItem.NameHindi
-                        imageUrl = clickItem.Image
-                        foodAdvantage = clickItem.Advt
-                        vitamins = clickItem.Vam
-                        diseaseHeal = clickItem.Dis
-                        precautions = clickItem.Dat
-                        price = clickItem.Price
+                        foodName = clickItem.foodName
+                        foodNameHindi = clickItem.foodNameHindi
+                        imageUrl = clickItem.foodImage
+                        foodAdvantage = clickItem.advantages
+                        vitamins = clickItem.vitamins
+                        diseaseHeal = clickItem.diseaseHeal
+                        precautions = clickItem.precaution
+                        price = clickItem.price
                         val foodNamePrice = "$foodName\n$foodNameHindi\n$price"
                         //  Toast.makeText(FlowerVegActivity.this,mName,Toast.LENGTH_SHORT).show();
 //                        Log.e("Data in flower:", foodNamePrice)

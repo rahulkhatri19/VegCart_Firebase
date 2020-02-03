@@ -34,6 +34,7 @@
             android:layout_height="80dp"
             android:contentDescription="@string/ordered_food_image"
             android:src="@drawable/apple"
+            android:paddingTop="12dp"
             card_view:layout_constraintEnd_toEndOf="@id/gl_30"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
