@@ -1,9 +1,10 @@
 # VegCart_Firebase
 App for vegetable &amp; Fruit sale
 
-Developed for 4.2 to 8.
+- Support Android Version 4.2 and above.
+- Androidx and Material Design
 
-Youtube vedio link: https://youtu.be/o5XZ_ZXkB6I
+Youtube video link: https://youtu.be/o5XZ_ZXkB6I
 
 Screenshot
 ----
@@ -25,11 +26,19 @@ Screenshot
 <table>
   <tr>
     <td>
-      <img src="screenshot/detail_screen.png" width=250 />
+      <img src="screenshot/detail_screen_1.png" width=250 />
+    </td>
+    <td>
+      <img src="screenshot/detail_screen_2.png" width=250 />
     </td>
     <td>
       <img src="screenshot/order_screen.png" width=250 />
     </td>
+  </tr>
+</table> 
+
+<table>
+  <tr>
     <td>
       <img src="screenshot/cart_screen.png" width=250 />
     </td>

@@ -1,52 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools"
-    android:id="@+id/card"
-    android:layout_marginTop="5dp"
     android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
     android:layout_marginRight="5dp"
     card_view:cardCornerRadius="5dp">
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main"
-        android:focusable="true"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:clickable="true"
-        android:background="?android:attr/selectableItemBackground"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            card_view:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_55"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            card_view:layout_constraintGuide_percent="0.55" />
+
+        <ImageView
+            android:id="@+id/iv_food"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/ordered_food_image"
+            android:src="@drawable/apple"
+            android:paddingTop="12dp"
+            card_view:layout_constraintEnd_toEndOf="@id/gl_30"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/tv_name"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:textSize="24sp"/>
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
+            card_view:layout_constraintEnd_toEndOf="@id/gl_30"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/iv_food"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/tv_title_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/price"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_30"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_30"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_title_price" />
+
+        <TextView
+            android:id="@+id/tv_title_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_30"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_title_quantity" />
+
+        <TextView
+            android:id="@+id/tv_colon_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:text=" : "
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toStartOf="@id/gl_55"
+            card_view:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_colon_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text=" : "
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toStartOf="@id/gl_55"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+        <TextView
+            android:id="@+id/tv_colon_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text=" : "
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toStartOf="@id/gl_55"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_quantity" />
+
+        <TextView
             android:id="@+id/tv_price"
-            android:paddingLeft="10dp"
-            android:textSize="14sp"/>
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_55"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:text="Price" />
+
+        <TextView
             android:id="@+id/tv_quantity"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:textSize="24sp"/>
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_55"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_price"
+            tools:text="Qunatity" />
+
+        <TextView
             android:id="@+id/tv_address"
-            android:paddingLeft="10dp"
-            android:textSize="14sp"/>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@id/gl_55"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_quantity"
+            tools:text="Add" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

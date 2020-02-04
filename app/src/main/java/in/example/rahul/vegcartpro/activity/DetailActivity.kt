@@ -5,30 +5,28 @@ import `in`.example.rahul.vegcartpro.R
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
-import java.text.NumberFormat
+import kotlinx.android.synthetic.main.activity_detail.*
+
 
 class DetailActivity : AppCompatActivity() {
     /*  On click recycler view item this activity will open
      *  Use: detail of a particular product, Nutrition fact */
     var image = ""
-    var detail = ""
-    var detail1 = ""
-    var detail2 = ""
-    var detail3 = ""
-    var detail4 = ""
-    var detail5 = ""
-    var imageView: ImageView? = null
-    lateinit var textView: TextView
-    lateinit var textView2: TextView
-    lateinit var textView3: TextView
-    lateinit var textView4: TextView
-    lateinit var textView5: TextView
+    var foodName = ""
+    var foodAdvantage = ""
+    var diseaseHeal = ""
+    var vitamins = ""
+    var precautions = ""
+    var pricefood = ""
     var numberOfVeg = 1.0
     var priceOfVeg = 0.0
 
@@ -38,49 +36,44 @@ class DetailActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
-        imageView = findViewById(R.id.imageView)
-        textView = findViewById(R.id.tv_d1)
-        textView2 = findViewById(R.id.tv_d2)
-        textView3 = findViewById(R.id.tv_d3)
-        textView4 = findViewById(R.id.tv_d4)
-        textView5 = findViewById(R.id.tv_price)
         val bundle = intent.extras
         image = bundle?.getString("imageurl")!!
-        detail = bundle.getString("foodName")!!
-        detail1 = bundle.getString("deta")!!
-        detail2 = bundle.getString("deta2")!!
-        detail3 = bundle.getString("deta3")!!
-        detail4 = bundle.getString("deta4")!!
-        detail5 = bundle.getString("deta5")!!
-        val price = "₹ $detail5 per KG"
-        Picasso.with(baseContext).load(image).into(imageView)
-        textView.setText(detail1)
-        textView2.setText(detail2)
-        textView3.setText(detail3)
-        textView4.setText(detail4)
-        textView5.setText(price)
-        //  5
+        foodName = bundle.getString("foodName")!!
+        foodAdvantage = bundle.getString("advantage")!!
+        vitamins = bundle.getString("vitamins")!!
+        diseaseHeal = bundle.getString("diseaseHeal")!!
+        precautions = bundle.getString("precautions")!!
+        pricefood = bundle.getString("price")!!
+        val price = "₹ $pricefood per KG"
+        Picasso.with(baseContext).load(image).into(iv_food)
+
+        tv_detail_advt.text = foodAdvantage
+        tv_detail_vitamin.text = vitamins
+        tv_detail_disease.text = diseaseHeal
+        tv_detail_precaution.text = precautions
+        tv_price.text = price
     }
 
     // Onclick cart image send to Order Activity
-    fun orderCart(view: View?) { /*Intent intent= new Intent(Detail.this, OrderActivity.class);
+    fun orderCart(view: View?) {
+        /*Intent intent= new Intent(Detail.this, OrderActivity.class);
         Bundle bundle=new Bundle();
-        bundle.putString("namefood",detail);
-        bundle.putString("pricefood",detail5);
+        bundle.putString("namefood",foodName);
+        bundle.putString("pricefood",pricefood);
         intent.putExtras(bundle);
         startActivity(intent);*/
         val builder = AlertDialog.Builder(this)
-        val alterLayout: View = layoutInflater.inflate(R.layout.alert_order_layout, null)
-        builder.setView(alterLayout)
-        val tvQuantity = alterLayout.findViewById<TextView>(R.id.tv_quantity)
-        val tvPrice = alterLayout.findViewById<TextView>(R.id.tv_price)
-        val btnIncrement = alterLayout.findViewById<Button>(R.id.btn_increment)
-        val btnDecrement = alterLayout.findViewById<Button>(R.id.btn_decrement)
-        val btnOk = alterLayout.findViewById<Button>(R.id.btn_ok)
-        val btnCancel = alterLayout.findViewById<Button>(R.id.btn_cancel)
-        val etDeliveryAdd = alterLayout.findViewById<EditText>(R.id.et_delivery_add)
-        priceOfVeg = detail5.toDouble()
-        tvPrice.text = "₹ $detail5"
+        val alertOrderLayout: View = layoutInflater.inflate(R.layout.alert_order_layout, null)
+        builder.setView(alertOrderLayout)
+        val tvQuantity = alertOrderLayout.findViewById<TextView>(R.id.tv_quantity)
+        val tvPrice = alertOrderLayout.findViewById<TextView>(R.id.tv_price)
+        val btnIncrement = alertOrderLayout.findViewById<Button>(R.id.btn_increment)
+        val btnDecrement = alertOrderLayout.findViewById<Button>(R.id.btn_decrement)
+        val btnOk = alertOrderLayout.findViewById<Button>(R.id.btn_ok)
+        val btnCancel = alertOrderLayout.findViewById<Button>(R.id.btn_cancel)
+        val etDeliveryAdd = alertOrderLayout.findViewById<EditText>(R.id.et_delivery_add)
+        priceOfVeg = pricefood.toDouble()
+        tvPrice.text = "₹ $pricefood"
         btnIncrement.setOnClickListener {
             numberOfVeg = numberOfVeg + 0.5
             // Increment of 500gm will done onclick + button
@@ -107,17 +100,17 @@ class DetailActivity : AppCompatActivity() {
                 etDeliveryAdd.error = "Please Enter Delivery Address"
                 etDeliveryAdd.requestFocus()
                 // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
-            } else { // Toast.makeText(Detail.this, "Price: " + tvPrice.getText().toString() + "\nQuantity: " + tvQuantity.getText().toString() + "\nAddress: " + etDeliveryAdd.getText().toString(), Toast.LENGTH_SHORT).show();
+            } else {
                 val database = FirebaseDatabase.getInstance()
                 val ref = database.getReference("Cart")
                 val newPostRef = ref.push()
-                newPostRef.setValue(CartModel(detail, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString()))
+                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString(), image))
                 Toast.makeText(baseContext, "Order Placed Successfully \n Thank you", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, HomeActivity::class.java))
             }
         }
         builder.setCancelable(false)
-        val alert = builder.create()
+        val alert:AlertDialog = builder.create()
         btnCancel.setOnClickListener { alert.dismiss() }
         alert.show()
     }
@@ -126,20 +119,13 @@ class DetailActivity : AppCompatActivity() {
         super.onResume()
         val ab = supportActionBar
         if (ab != null) {
-            ab.title = "Product Detail"
+            if(foodName.equals("")){
+                ab.title = "Food Description"
+            } else {
+                ab.title = foodName
+            }
+
             ab.setDisplayHomeAsUpEnabled(true)
         }
     }
-
-    // display the quantity between + and - button
-/*
-    private void display(double i) {
-        tvQuantity.setText(""+i);
-    }
-*/
-    // display price onclick +,- button
-    /* private void displayPrice(double number) {
-
-        tvPrice.setText(NumberFormat.getCurrencyInstance().format(number));
-    }*/
 }

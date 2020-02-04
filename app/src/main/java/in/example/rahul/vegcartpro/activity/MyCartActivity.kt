@@ -4,19 +4,22 @@ import `in`.example.rahul.vegcartpro.Model.CartModel
 import `in`.example.rahul.vegcartpro.R
 import android.app.ProgressDialog
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import android.util.Log
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.Picasso
 
 class MyCartActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
@@ -52,11 +55,17 @@ class MyCartActivity : AppCompatActivity() {
     fun loadData() {
         val options: FirebaseRecyclerOptions<CartModel> = FirebaseRecyclerOptions.Builder<CartModel>().setQuery(allFoodData!!, CartModel::class.java).setLifecycleOwner(this).build()
         val adapter: FirebaseRecyclerAdapter<CartModel, FoodViewHolder> = object : FirebaseRecyclerAdapter<CartModel, FoodViewHolder>(options) {
-            protected override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
-                viewHolder.tvName.setText(model.Name)
-                viewHolder.tvPrice.setText(model.Price)
-                viewHolder.tvQuantity.setText(model.Price)
-                viewHolder.tvAddress.setText(model.Address)
+            override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
+                viewHolder.tvName.text = model.name
+                viewHolder.tvPrice.text = model.price
+                viewHolder.tvQuantity.text = model.quantity
+                viewHolder.tvAddress.text = model.address
+                if(!model.foodImage.equals("")){
+                    Picasso.with(this@MyCartActivity).load(model.foodImage).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)
+                }
+                val stCart = "name: ${model.name} price: ${model.price} qut: ${model.quantity} add: ${model.address} image: ${model.foodImage}"
+                Log.e("My cart",stCart)
+
                 progressDialog!!.dismiss()
             }
 
@@ -80,7 +89,7 @@ class MyCartActivity : AppCompatActivity() {
                 viewHolder.tvPrice.setText(model.getPrice());
                 viewHolder.tvQuantity.setText(model.getQuantity());
                 viewHolder.tvAddress.setText(model.getAddress());
-                //Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/K11.TTF");
+                //Typeface face2=Typeface.createFromAsset(getAssets(),"fonts/KrutiHindi.TTF");
 
                // viewHolder.txtnameHindi.setTypeface(face2);
                 // final AllFood clickItem= model;
@@ -123,12 +132,14 @@ class MyCartActivity : AppCompatActivity() {
         var tvPrice: TextView
         var tvQuantity: TextView
         var tvAddress: TextView
+        var ivFood: ImageView
 
         init {
             tvName = itemView.findViewById(R.id.tv_name)
             tvPrice = itemView.findViewById(R.id.tv_price)
             tvQuantity = itemView.findViewById(R.id.tv_quantity)
             tvAddress = itemView.findViewById(R.id.tv_address)
+            ivFood = itemView.findViewById(R.id.iv_food)
         }
     }
 
