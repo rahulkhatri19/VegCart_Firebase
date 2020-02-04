@@ -1,4 +1,4 @@
-package `in`.example.rahul.vegcartpro.Interface
+package `in`.example.rahul.vegcartpro.interfaces
 
 import android.view.View
 

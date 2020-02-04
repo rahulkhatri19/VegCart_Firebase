@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro
 
-import `in`.example.rahul.vegcartpro.Model.ItemModel
+import `in`.example.rahul.vegcartpro.model.ItemModel
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater

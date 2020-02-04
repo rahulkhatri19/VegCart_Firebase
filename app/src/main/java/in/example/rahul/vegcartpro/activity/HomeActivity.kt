@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.activity
 
-import `in`.example.rahul.vegcartpro.Model.ItemModel
+import `in`.example.rahul.vegcartpro.model.ItemModel
 import `in`.example.rahul.vegcartpro.MyAdapter
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
@@ -22,11 +22,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
 import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import com.daimajia.slider.library.Animations.DescriptionAnimation
 import com.daimajia.slider.library.SliderLayout
@@ -35,7 +33,6 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListe
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.home.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, MyAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
