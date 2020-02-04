@@ -1,6 +1,7 @@
-package `in`.example.rahul.vegcartpro
+package `in`.example.rahul.vegcartpro.adapter
 
-import `in`.example.rahul.vegcartpro.Model.ItemModel
+import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.model.ItemModel
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 
-class MyAdapter(var itemList: List<ItemModel>?) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class HomeAdapter(var itemList: List<ItemModel>?) : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     //    private var itemList: List<ItemModel>? = null
     private var clickListener: ClickListener? = null
     /*fun MyAdapter(itemList: List<ItemModel>?) {

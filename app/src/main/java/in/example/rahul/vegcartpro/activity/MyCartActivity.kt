@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.activity
 
-import `in`.example.rahul.vegcartpro.Model.CartModel
+import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
 import android.app.ProgressDialog
 import android.os.Bundle

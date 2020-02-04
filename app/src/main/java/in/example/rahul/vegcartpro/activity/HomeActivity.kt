@@ -1,7 +1,7 @@
 package `in`.example.rahul.vegcartpro.activity
 
-import `in`.example.rahul.vegcartpro.Model.ItemModel
-import `in`.example.rahul.vegcartpro.MyAdapter
+import `in`.example.rahul.vegcartpro.model.ItemModel
+import `in`.example.rahul.vegcartpro.adapter.HomeAdapter
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.app.AlertDialog
@@ -22,11 +22,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
 import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import com.daimajia.slider.library.Animations.DescriptionAnimation
 import com.daimajia.slider.library.SliderLayout
@@ -35,13 +33,12 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListe
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.home.*
 import java.util.*
 
-class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, MyAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, HomeAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
     private val itemList: MutableList<ItemModel> = mutableListOf()
     private var recyclerView: RecyclerView? = null
-    var adapter: MyAdapter? = null
+    var adapter: HomeAdapter? = null
     private val main: LinearLayout? = null
     var sliderLayout: SliderLayout? = null
     var HashMapForURL: HashMap<String, String>? = null
@@ -89,7 +86,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         sliderLayout?.addOnPageChangeListener(this@HomeActivity)
         // Bottom
         prepareItem()
-        adapter = MyAdapter(itemList)
+        adapter = HomeAdapter(itemList)
         adapter?.setClickListener(this)
         adapter?.setClickListener(this)
         //RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(getApplicationContext());
