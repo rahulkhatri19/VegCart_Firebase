@@ -25,7 +25,7 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 - model: all model class of project.
 - utils: files which can be used in entire project.
 
-- [Relase apk](APK/VegCart.apk) for check/Try app. 
+- [Release apk](APK/VegCart.apk) for check/Try app. 
 
 #### App Demo video [Youtube link](https://youtu.be/o5XZ_ZXkB6I)
 
