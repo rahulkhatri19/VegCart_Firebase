@@ -1,6 +1,6 @@
-package `in`.example.rahul.vegcartpro.activity
+package `in`.example.rahul.vegcartpro.view.activity
 
-import `in`.example.rahul.vegcartpro.model.CartModel
+import `in`.example.rahul.vegcartpro.service.model.CartModel
 import `in`.example.rahul.vegcartpro.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

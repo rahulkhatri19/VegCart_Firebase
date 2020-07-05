@@ -16,6 +16,9 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 - [Picasso](https://square.github.io/picasso/) - To showcase image from url (server).
 - [Firebase Realtime Database](https://firebase.google.com/docs/database): For app realtime data Firebase is used.
 - Support Android Version 4.2 and above.
+- data binding
+- mvvm
+
 
 ### App Packages:
 

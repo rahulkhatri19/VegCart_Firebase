@@ -3,7 +3,7 @@ package `in`.example.rahul.vegcartpro.utils
 import android.content.Context
 import android.content.SharedPreferences
 
-class SharedPreferenceUtils(var mContext: Context?) {
+class SharedPreferenceUtils(mContext: Context?) {
 //    var mContext: Context? = null
     var pref: SharedPreferences? = null
 init {

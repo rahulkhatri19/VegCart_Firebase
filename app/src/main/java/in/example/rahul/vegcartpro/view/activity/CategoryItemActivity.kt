@@ -1,7 +1,7 @@
-package `in`.example.rahul.vegcartpro.activity
+package `in`.example.rahul.vegcartpro.view.activity
 
-import `in`.example.rahul.vegcartpro.interfaces.ItemClickListener
-import `in`.example.rahul.vegcartpro.model.FoodDetailModel
+import `in`.example.rahul.vegcartpro.view.interfaces.ItemClickListener
+import `in`.example.rahul.vegcartpro.service.model.FoodDetailModel
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.CustomProgressBar
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils

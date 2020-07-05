@@ -1,7 +1,7 @@
-package `in`.example.rahul.vegcartpro.activity
+package `in`.example.rahul.vegcartpro.view.activity
 
-import `in`.example.rahul.vegcartpro.model.ItemModel
-import `in`.example.rahul.vegcartpro.adapter.HomeAdapter
+import `in`.example.rahul.vegcartpro.service.model.ItemModel
+import `in`.example.rahul.vegcartpro.view.adapter.HomeAdapter
 import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.app.AlertDialog

@@ -1,7 +1,7 @@
-package `in`.example.rahul.vegcartpro.adapter
+package `in`.example.rahul.vegcartpro.view.adapter
 
 import `in`.example.rahul.vegcartpro.R
-import `in`.example.rahul.vegcartpro.model.ItemModel
+import `in`.example.rahul.vegcartpro.service.model.ItemModel
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater

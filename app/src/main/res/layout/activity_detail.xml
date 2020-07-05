@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cb_grey"
-    tools:context="in.example.rahul.vegcartpro.activity.DetailActivity">
+    tools:context=".view.activity.DetailActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

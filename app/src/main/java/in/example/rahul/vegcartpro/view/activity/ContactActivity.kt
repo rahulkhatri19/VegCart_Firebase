@@ -1,4 +1,4 @@
-package `in`.example.rahul.vegcartpro.activity
+package `in`.example.rahul.vegcartpro.view.activity
 
 import `in`.example.rahul.vegcartpro.R
 import android.content.Intent

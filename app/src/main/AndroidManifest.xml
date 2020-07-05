@@ -16,10 +16,10 @@
         android:roundIcon="@drawable/fruit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CategoryItemActivity"
+        <activity android:name="in.example.rahul.vegcartpro.view.activity.CategoryItemActivity"
             android:theme="@style/AppTheme.NoActionBarStyle"/>
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,24 +28,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.DetailActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.DetailActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name="in.example.rahul.vegcartpro.view.activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.OrderActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.OrderActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
-            android:name=".activity.FlowerVegActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.FlowerVegActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
-            android:name=".activity.ContactActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.ContactActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
-            android:name=".activity.MyCartActivity"
+            android:name="in.example.rahul.vegcartpro.view.activity.MyCartActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
 
         <meta-data
