@@ -71,7 +71,7 @@ class DetailActivity : AppCompatActivity() {
         val btnDecrement = alertOrderLayout.findViewById<Button>(R.id.btn_decrement)
         val btnOk = alertOrderLayout.findViewById<Button>(R.id.btn_ok)
         val btnCancel = alertOrderLayout.findViewById<Button>(R.id.btn_cancel)
-        val etDeliveryAdd = alertOrderLayout.findViewById<EditText>(R.id.et_delivery_add)
+//        val etDeliveryAdd = alertOrderLayout.findViewById<EditText>(R.id.et_delivery_add)
         priceOfVeg = pricefood.toDouble()
         tvPrice.text = "₹ $pricefood"
         btnIncrement.setOnClickListener {
@@ -85,7 +85,7 @@ class DetailActivity : AppCompatActivity() {
         }
         btnDecrement.setOnClickListener {
             if (numberOfVeg >= 1) {
-                numberOfVeg = numberOfVeg - 0.5
+                numberOfVeg -= 0.5
             }
             // Decrement of 500gm will done onclick - button
 //  display(numberOfVeg);
@@ -96,18 +96,17 @@ class DetailActivity : AppCompatActivity() {
 //            tvPrice.text = NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
         }
         btnOk.setOnClickListener {
-            if (etDeliveryAdd.text.toString().trim { it <= ' ' } == "") {
-                etDeliveryAdd.error = "Please Enter Delivery Address"
-                etDeliveryAdd.requestFocus()
-                // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
-            } else {
+//            if (etDeliveryAdd.text.toString().trim { it <= ' ' } == "") {
+//                etDeliveryAdd.error = "Please Enter Delivery Address"
+//                etDeliveryAdd.requestFocus()
+//                // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
+//            } else {
                 val database = FirebaseDatabase.getInstance()
                 val ref = database.getReference("Cart")
                 val newPostRef = ref.push()
-                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString(), image))
-                Toast.makeText(baseContext, "Order Placed Successfully \n Thank you", Toast.LENGTH_SHORT).show()
+                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), "Cart", image))
+                Toast.makeText(baseContext, "Order Added to Cart Successfully \n Thank you", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, HomeActivity::class.java))
-            }
         }
         builder.setCancelable(false)
         val alert:AlertDialog = builder.create()

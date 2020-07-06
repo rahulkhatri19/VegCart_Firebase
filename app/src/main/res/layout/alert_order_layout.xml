@@ -5,11 +5,12 @@
     android:background="@drawable/back_white"
     android:orientation="vertical"
     android:padding="16dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/order_product"
         android:textAlignment="center"
-        android:text="Order Product"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -43,8 +44,22 @@
             android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp"
             android:text="1"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="Kg"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -74,11 +89,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:text="2"
-            android:id="@+id/tv_price"
             android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
@@ -87,40 +102,49 @@
         android:id="@+id/et_delivery_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginBottom="10dp"
         android:background="@null"
+        android:ems="10"
         android:hint="Enter Delivery Address"
         android:inputType="textPostalAddress"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/black"
-        android:textSize="16sp" />
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp">
-    <Button
-        android:id="@+id/btn_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentEnd="true"
-        android:textAllCaps="false"
-        android:background="@drawable/background_green"
-        android:text="Submit"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_toLeftOf="@+id/btn_ok"
-        android:textAllCaps="false"
-        android:background="@drawable/background_green"
-        android:text="Cancel"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
-</RelativeLayout>
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/background_green"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/add_to_cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/background_green"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
 </LinearLayout>

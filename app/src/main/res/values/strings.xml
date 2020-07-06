@@ -21,7 +21,7 @@
     <string name="food_item_image">Food Item Image</string>
     <string name="vegetable_name">Vegetable Name</string>
     <string name="vegetable_name_in_hindi">Vegetable name in hindi</string>
-    <string name="add_to_cart">add to Cart</string>
+    <string name="add_to_cart">Add to Cart</string>
     <string name="advantages">Advantages</string>
     <string name="heal_disease">Heal Disease</string>
     <string name="vitamin_amp_mineral"><![CDATA[Vitamin & Mineral]]></string>
@@ -37,4 +37,7 @@
     <string name="facebook_profile">facebook.com/rahulkhatri19</string>
     <string name="gmail_id">khatri.rahul019@gmail.com</string>
     <string name="please_wait">Please Wait ...</string>
+    <string name="order_product">Order Product</string>
+    <string name="cancel">Cancel</string>
+    <string name="checkout_cart">Checkout Cart</string>
 </resources>
