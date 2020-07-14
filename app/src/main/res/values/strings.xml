@@ -40,4 +40,5 @@
     <string name="order_product">Order Product</string>
     <string name="cancel">Cancel</string>
     <string name="checkout_cart">Checkout Cart</string>
+    <string name="productImage">Product Image</string>
 </resources>
