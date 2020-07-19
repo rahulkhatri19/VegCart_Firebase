@@ -18,22 +18,22 @@
         android:padding="12dp">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_25"
+            android:id="@+id/gl_35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25"
+            app:layout_constraintGuide_percent="0.35"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/ivProduct"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/productImage"
-            app:layout_constraintEnd_toStartOf="@id/gl_25"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+           android:contentDescription="@string/productImage"
+            app:layout_constraintEnd_toStartOf="@id/gl_35"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvProductName"
@@ -46,22 +46,96 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/gl_25"
+            app:layout_constraintStart_toEndOf="@id/gl_35"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/add_to_cart" />
+            tools:text="Apple" />
 
-        <TextView
-            android:id="@+id/tvProductQuantity"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/llQuantity"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:background="@drawable/back_white_border_black"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintStart_toEndOf="@id/gl_35"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName">
+
+            <TextView
+                android:id="@+id/tvProductQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="12" />
+
+            <TextView
+                android:id="@+id/tvProductQuantityUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Kg"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_white_border_black"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/gl_25"
-            app:layout_constraintTop_toBottomOf="@id/tvProductName"
-            tools:text="@string/add_to_cart" />
+            app:layout_constraintTop_toBottomOf="@id/tvProductPrice">
+
+            <Button
+                android:id="@+id/btn_increment"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/green"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="16dp"
+                android:text="1"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Kg"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_decrement"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/btnSignActivity"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvProductPrice"
@@ -72,9 +146,8 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/gl_25"
-            app:layout_constraintTop_toBottomOf="@id/tvProductQuantity"
-            tools:text="@string/add_to_cart" />
-
+            app:layout_constraintStart_toEndOf="@id/gl_35"
+            app:layout_constraintTop_toBottomOf="@id/llQuantity"
+            tools:text="123.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -106,7 +106,7 @@ class DetailActivity : AppCompatActivity() {
                 val newPostRef = ref.push()
                 newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), "Cart", image))
                 Toast.makeText(baseContext, "Order Added to Cart Successfully \n Thank you", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, CartActivity::class.java))
         }
         builder.setCancelable(false)
         val alert:AlertDialog = builder.create()
