@@ -8,6 +8,8 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 - **Help to Heal:** It shocase the disease, unfavorable effects can be reduced by consumption of that food.
 - **Precution:** As over-consumtion of anything is dangerous, same with food also. this section will indicate possible side effect of food over-consumtion.
 
+#### [Firebase Realtime DB Gist JSON file link](https://gist.github.com/rahulkhatri19/4aa7e981ea008707c9808bad81e78edc)
+
 ### App Specifications: 
 
 - [Androidx](https://developer.android.com/jetpack/androidx) and Material Design
