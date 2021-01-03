@@ -41,4 +41,8 @@
     <string name="cancel">Cancel</string>
     <string name="checkout_cart">Checkout Cart</string>
     <string name="productImage">Product Image</string>
+    <string name="kg">Kg</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="amount">₹ %1$s</string>
 </resources>

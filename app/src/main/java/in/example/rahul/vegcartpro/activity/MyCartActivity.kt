@@ -2,6 +2,7 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.utils.Constants.CART
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.util.Log
@@ -34,7 +35,7 @@ class MyCartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_cart)
         database = FirebaseDatabase.getInstance()
-        allFoodData = database!!.getReference("Cart")
+        allFoodData = database!!.getReference(CART)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
@@ -57,8 +58,8 @@ class MyCartActivity : AppCompatActivity() {
         val adapter: FirebaseRecyclerAdapter<CartModel, FoodViewHolder> = object : FirebaseRecyclerAdapter<CartModel, FoodViewHolder>(options) {
             override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
                 viewHolder.tvName.text = model.name
-                viewHolder.tvPrice.text = model.price
-                viewHolder.tvQuantity.text = model.quantity
+                viewHolder.tvPrice.text = model.price.toString()
+                viewHolder.tvQuantity.text = model.quantity.toString()
                 viewHolder.tvAddress.text = model.address
                 if(!model.foodImage.equals("")){
                     Picasso.with(this@MyCartActivity).load(model.foodImage).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)

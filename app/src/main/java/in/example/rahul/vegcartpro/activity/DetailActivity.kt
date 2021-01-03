@@ -2,6 +2,7 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.utils.Constants.CART
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -102,10 +103,10 @@ class DetailActivity : AppCompatActivity() {
 //                // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
 //            } else {
                 val database = FirebaseDatabase.getInstance()
-                val ref = database.getReference("Cart")
+                val ref = database.getReference(CART)
                 val newPostRef = ref.push()
-                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), "Cart", image))
-                Toast.makeText(baseContext, "Order Added to Cart Successfully \n Thank you", Toast.LENGTH_SHORT).show()
+//                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), CART, image))
+//                Toast.makeText(baseContext, "Order Added to Cart Successfully \n Thank you", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, CartActivity::class.java))
         }
         builder.setCancelable(false)
