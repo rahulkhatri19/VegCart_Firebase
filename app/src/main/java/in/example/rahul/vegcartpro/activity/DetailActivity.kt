@@ -2,7 +2,9 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.utils.Constants
 import `in`.example.rahul.vegcartpro.utils.Constants.CART
+import `in`.example.rahul.vegcartpro.utils.Constants.ONE
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -45,24 +47,47 @@ class DetailActivity : AppCompatActivity() {
         diseaseHeal = bundle.getString("diseaseHeal")!!
         precautions = bundle.getString("precautions")!!
         pricefood = bundle.getString("price")!!
-        val price = "₹ $pricefood per KG"
         Picasso.with(baseContext).load(image).into(iv_food)
 
         tv_detail_advt.text = foodAdvantage
         tv_detail_vitamin.text = vitamins
         tv_detail_disease.text = diseaseHeal
         tv_detail_precaution.text = precautions
-        tv_price.text = price
+        tv_price.text = getString(R.string.pricePerkg, pricefood)
+
+        tv_cart.setOnClickListener {
+            llCart.visibility = View.VISIBLE
+            tv_cart.visibility = View.GONE
+            numberOfVeg = 1.0
+            tvQuantity.text = numberOfVeg.toString()
+        }
+
+        btnDecrement.setOnClickListener {
+            if (numberOfVeg == Constants.POINT_FIVE) {
+                llCart.visibility = View.GONE
+                tv_cart.visibility = View.VISIBLE
+                tv_price.text = getString(R.string.pricePerkg, pricefood)
+            }
+
+            if (numberOfVeg >= Constants.ONE) {
+                numberOfVeg -= Constants.POINT_FIVE
+                val amountPrice = numberOfVeg * pricefood.toDouble()
+                tv_price.text = getString(R.string.amount, amountPrice.toString())
+            }
+            tvQuantity.text = numberOfVeg.toString()
+        }
+
+        btnIncrement.setOnClickListener {
+            numberOfVeg += Constants.POINT_FIVE
+            val amountPrice = numberOfVeg * pricefood.toDouble()
+            tvQuantity.text = numberOfVeg.toString()
+            tv_price.text = getString(R.string.amount, amountPrice.toString())
+        }
     }
 
     // Onclick cart image send to Order Activity
     fun orderCart(view: View?) {
-        /*Intent intent= new Intent(Detail.this, OrderActivity.class);
-        Bundle bundle=new Bundle();
-        bundle.putString("namefood",foodName);
-        bundle.putString("pricefood",pricefood);
-        intent.putExtras(bundle);
-        startActivity(intent);*/
+
         val builder = AlertDialog.Builder(this)
         val alertOrderLayout: View = layoutInflater.inflate(R.layout.alert_order_layout, null)
         builder.setView(alertOrderLayout)
@@ -119,7 +144,7 @@ class DetailActivity : AppCompatActivity() {
         super.onResume()
         val ab = supportActionBar
         if (ab != null) {
-            if(foodName.equals("")){
+            if(foodName == ""){
                 ab.title = "Food Description"
             } else {
                 ab.title = foodName

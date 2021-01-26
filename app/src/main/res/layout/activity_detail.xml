@@ -226,9 +226,8 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_shopping_cart"
             android:drawablePadding="8dp"
-            android:onClick="orderCart"
             android:padding="8dp"
-            android:text="Add to Cart"
+            android:text="@string/addToCart"
             android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@color/light_green"
             android:textSize="18sp"
@@ -236,19 +235,63 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--<ImageView
-            android:id="@+id/cart"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/background_white"
-            android:contentDescription="@string/add_to_cart"
-            android:onClick="orderCart"
-            android:padding="8dp"
-            android:src="@drawable/ic_shopping_cart"
+
+        <LinearLayout
+            android:id="@+id/llCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_white_border_black"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>-->
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnIncrement"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/green"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dimen16dp"
+                android:paddingTop="@dimen/dimen16dp"
+                android:paddingEnd="@dimen/dimen8dp"
+                android:paddingBottom="@dimen/dimen16dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen16sp"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen16dp"
+                android:paddingEnd="@dimen/dimen16dp"
+                android:paddingBottom="@dimen/dimen16dp"
+                android:text="@string/kg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen16sp" />
+
+            <Button
+                android:id="@+id/btnDecrement"
+                android:layout_width="@dimen/dimen40dp"
+                android:layout_height="@dimen/dimen40dp"
+                android:background="@color/btnSignActivity"
+                android:text="@string/minus"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

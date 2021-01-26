@@ -45,4 +45,6 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="amount">₹ %1$s</string>
+    <string name="pricePerkg">₹ %1$s per KG</string>
+    <string name="addToCart">Add to Cart</string>
 </resources>
