@@ -2,9 +2,12 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.model.BucketModel
+import `in`.example.rahul.vegcartpro.model.UserDetailModel
 import `in`.example.rahul.vegcartpro.utils.Constants
 import `in`.example.rahul.vegcartpro.utils.Constants.CART
 import `in`.example.rahul.vegcartpro.utils.Constants.ONE
+import `in`.example.rahul.vegcartpro.utils.Utility
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -24,6 +27,7 @@ class DetailActivity : AppCompatActivity() {
     /*  On click recycler view item this activity will open
      *  Use: detail of a particular product, Nutrition fact */
     var image = ""
+    var id = ""
     var foodName = ""
     var foodAdvantage = ""
     var diseaseHeal = ""
@@ -40,7 +44,8 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
         val bundle = intent.extras
-        image = bundle?.getString("imageurl")!!
+        id = bundle?.getString("id")!!
+        image = bundle.getString("imageurl")!!
         foodName = bundle.getString("foodName")!!
         foodAdvantage = bundle.getString("advantage")!!
         vitamins = bundle.getString("vitamins")!!
@@ -60,6 +65,7 @@ class DetailActivity : AppCompatActivity() {
             tv_cart.visibility = View.GONE
             numberOfVeg = 1.0
             tvQuantity.text = numberOfVeg.toString()
+            addToBucket()
         }
 
         btnDecrement.setOnClickListener {
@@ -67,14 +73,17 @@ class DetailActivity : AppCompatActivity() {
                 llCart.visibility = View.GONE
                 tv_cart.visibility = View.VISIBLE
                 tv_price.text = getString(R.string.pricePerkg, pricefood)
+                removeBucket()
             }
 
             if (numberOfVeg >= Constants.ONE) {
                 numberOfVeg -= Constants.POINT_FIVE
                 val amountPrice = numberOfVeg * pricefood.toDouble()
                 tv_price.text = getString(R.string.amount, amountPrice.toString())
+                addToBucket()
             }
             tvQuantity.text = numberOfVeg.toString()
+
         }
 
         btnIncrement.setOnClickListener {
@@ -82,7 +91,22 @@ class DetailActivity : AppCompatActivity() {
             val amountPrice = numberOfVeg * pricefood.toDouble()
             tvQuantity.text = numberOfVeg.toString()
             tv_price.text = getString(R.string.amount, amountPrice.toString())
+            addToBucket()
         }
+    }
+
+    //  remove Item from Bucket
+    private fun removeBucket() {
+        val reference = FirebaseDatabase.getInstance().getReference(Constants.BUCKET)
+        reference.child(Utility.getDeviceId(this)).child(id).removeValue()
+    }
+
+    //  add product to Bucket
+    private fun addToBucket() {
+        val reference = FirebaseDatabase.getInstance().getReference(Constants.BUCKET)
+        val price = numberOfVeg * pricefood.toDouble()
+        val bucket = BucketModel(id, image, foodName, price, numberOfVeg)
+        reference.child(Utility.getDeviceId(this)).child(id).setValue(bucket)
     }
 
     // Onclick cart image send to Order Activity

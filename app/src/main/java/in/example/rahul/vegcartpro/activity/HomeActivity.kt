@@ -3,7 +3,15 @@ package `in`.example.rahul.vegcartpro.activity
 import `in`.example.rahul.vegcartpro.model.ItemModel
 import `in`.example.rahul.vegcartpro.adapter.HomeAdapter
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.model.UserDetailModel
+import `in`.example.rahul.vegcartpro.utils.Constants
+import `in`.example.rahul.vegcartpro.utils.Constants.USER_DETAIL
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
+import `in`.example.rahul.vegcartpro.utils.Utility
+import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceId
+import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceManufacturer
+import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceModel
+import `in`.example.rahul.vegcartpro.utils.Utility.getOsVersionName
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -22,6 +30,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
@@ -32,6 +41,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView
 import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListener
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -48,8 +58,10 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        getUserDetail()
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.title = "Menu"
+        setSupportActionBar(toolbar)
         sliderLayout = findViewById(R.id.slider)
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         recyclerView = findViewById(R.id.recyclerView)
@@ -96,6 +108,15 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         recyclerView?.adapter = adapter
     }
 
+    //  get user basic Detail
+    private fun getUserDetail() {
+        if (isOnline()) {
+            val reference = FirebaseDatabase.getInstance().getReference(USER_DETAIL)
+            val userDetail = UserDetailModel(getOsVersionName(), getDeviceModel(), getDeviceManufacturer())
+            reference.child(getDeviceId(this)).setValue(userDetail)
+        }
+    }
+
     fun AddImagesUrlOnline() {
         HashMapForURL = HashMap()
         HashMapForURL!!["All Veg"] = "http://"
@@ -128,7 +149,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
 
     override fun onPageScrollStateChanged(state: Int) {}
 
-// Bottom
+    // Bottom
     private fun prepareItem() {
 //        var item = Item(R.drawable.shutterstock, "Flower", "Price is 30")
 //        itemList.add(item)
@@ -212,9 +233,10 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     private fun isOnline(): Boolean {
         val result: Boolean
         val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val networkCapabilities = connectivityManager.activeNetwork ?: return false
-            val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities)
+                    ?: return false
 
             result = when {
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
@@ -236,5 +258,21 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
 //            }
         }
         return result
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.bucket -> {
+                startActivity(Intent(this, CartActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
     }
 }

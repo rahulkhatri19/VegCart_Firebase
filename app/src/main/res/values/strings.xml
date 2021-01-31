@@ -47,4 +47,5 @@
     <string name="amount">₹ %1$s</string>
     <string name="pricePerkg">₹ %1$s per KG</string>
     <string name="addToCart">Add to Cart</string>
+    <string name="bucket">bucket</string>
 </resources>

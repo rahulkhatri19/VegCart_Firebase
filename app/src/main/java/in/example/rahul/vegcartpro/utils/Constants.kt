@@ -16,4 +16,6 @@ object Constants {
     const val DISEASE_HEAL = "diseaseHeal"
     const val PRECAUTIONS = "precautions"
     const val PRICE = "price"
+    const val USER_DETAIL = "userDetail"
+    const val BUCKET = "bucket"
 }

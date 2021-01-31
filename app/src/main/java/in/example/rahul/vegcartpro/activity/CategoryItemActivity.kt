@@ -103,6 +103,7 @@ class CategoryItemActivity : AppCompatActivity() {
 //                        Log.e("Data in flower:", foodNamePrice)
                         val intent = Intent(this@CategoryItemActivity, DetailActivity::class.java)
                         val bundle = Bundle()
+                        bundle.putString("id", clickItem.id)
                         bundle.putString("foodName", foodName)
                         bundle.putString("imageurl", imageUrl)
                         bundle.putString("advantage", foodAdvantage)
