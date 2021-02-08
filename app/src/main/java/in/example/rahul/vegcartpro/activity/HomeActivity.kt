@@ -74,16 +74,8 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         toggle.syncState()
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-//        val headerView = navigationView.getHeaderView(0)
-//        val txtFullName = headerView.findViewById<TextView>(R.id.txtFullName)
-        // recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
-// layoutManager.
-// Call below method if you want images online
-//AddImagesUrlOnline();
-// Call below method if you want images offline
         AddImageUrlLocal()
         // Call below method if you want to stop Automatic sliding
-//sliderLayout.stopAutoCycle();
         for (name in HashMapForLocal.keys) {
             val textSliderView = TextSliderView(this@HomeActivity)
             textSliderView.description(name).image(HashMapForLocal[name]!!).setScaleType(BaseSliderView.ScaleType.CenterCrop).setOnSliderClickListener(this)

@@ -105,7 +105,7 @@ class DetailActivity : AppCompatActivity() {
     private fun addToBucket() {
         val reference = FirebaseDatabase.getInstance().getReference(Constants.BUCKET)
         val price = numberOfVeg * pricefood.toDouble()
-        val bucket = BucketModel(id, image, foodName, price, numberOfVeg)
+        val bucket = BucketModel(id, image, foodName, pricefood.toDouble(), numberOfVeg, price)
         reference.child(Utility.getDeviceId(this)).child(id).setValue(bucket)
     }
 

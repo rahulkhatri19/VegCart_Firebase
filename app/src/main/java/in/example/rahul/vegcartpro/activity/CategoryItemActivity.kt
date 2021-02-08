@@ -8,6 +8,7 @@ import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
