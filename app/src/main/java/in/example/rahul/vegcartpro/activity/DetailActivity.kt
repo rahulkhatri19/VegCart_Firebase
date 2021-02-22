@@ -2,6 +2,12 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.model.BucketModel
+import `in`.example.rahul.vegcartpro.model.UserDetailModel
+import `in`.example.rahul.vegcartpro.utils.Constants
+import `in`.example.rahul.vegcartpro.utils.Constants.CART
+import `in`.example.rahul.vegcartpro.utils.Constants.ONE
+import `in`.example.rahul.vegcartpro.utils.Utility
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -21,6 +27,7 @@ class DetailActivity : AppCompatActivity() {
     /*  On click recycler view item this activity will open
      *  Use: detail of a particular product, Nutrition fact */
     var image = ""
+    var id = ""
     var foodName = ""
     var foodAdvantage = ""
     var diseaseHeal = ""
@@ -37,31 +44,74 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
         val bundle = intent.extras
-        image = bundle?.getString("imageurl")!!
+        id = bundle?.getString("id")!!
+        image = bundle.getString("imageurl")!!
         foodName = bundle.getString("foodName")!!
         foodAdvantage = bundle.getString("advantage")!!
         vitamins = bundle.getString("vitamins")!!
         diseaseHeal = bundle.getString("diseaseHeal")!!
         precautions = bundle.getString("precautions")!!
         pricefood = bundle.getString("price")!!
-        val price = "₹ $pricefood per KG"
         Picasso.with(baseContext).load(image).into(iv_food)
 
         tv_detail_advt.text = foodAdvantage
         tv_detail_vitamin.text = vitamins
         tv_detail_disease.text = diseaseHeal
         tv_detail_precaution.text = precautions
-        tv_price.text = price
+        tv_price.text = getString(R.string.pricePerkg, pricefood)
+
+        tv_cart.setOnClickListener {
+            llCart.visibility = View.VISIBLE
+            tv_cart.visibility = View.GONE
+            numberOfVeg = 1.0
+            tvQuantity.text = numberOfVeg.toString()
+            addToBucket()
+        }
+
+        btnDecrement.setOnClickListener {
+            if (numberOfVeg == Constants.POINT_FIVE) {
+                llCart.visibility = View.GONE
+                tv_cart.visibility = View.VISIBLE
+                tv_price.text = getString(R.string.pricePerkg, pricefood)
+                removeBucket()
+            }
+
+            if (numberOfVeg >= Constants.ONE) {
+                numberOfVeg -= Constants.POINT_FIVE
+                val amountPrice = numberOfVeg * pricefood.toDouble()
+                tv_price.text = getString(R.string.amount, amountPrice.toString())
+                addToBucket()
+            }
+            tvQuantity.text = numberOfVeg.toString()
+
+        }
+
+        btnIncrement.setOnClickListener {
+            numberOfVeg += Constants.POINT_FIVE
+            val amountPrice = numberOfVeg * pricefood.toDouble()
+            tvQuantity.text = numberOfVeg.toString()
+            tv_price.text = getString(R.string.amount, amountPrice.toString())
+            addToBucket()
+        }
+    }
+
+    //  remove Item from Bucket
+    private fun removeBucket() {
+        val reference = FirebaseDatabase.getInstance().getReference(Constants.BUCKET)
+        reference.child(Utility.getDeviceId(this)).child(id).removeValue()
+    }
+
+    //  add product to Bucket
+    private fun addToBucket() {
+        val reference = FirebaseDatabase.getInstance().getReference(Constants.BUCKET)
+        val price = numberOfVeg * pricefood.toDouble()
+        val bucket = BucketModel(id, image, foodName, pricefood.toDouble(), numberOfVeg, price)
+        reference.child(Utility.getDeviceId(this)).child(id).setValue(bucket)
     }
 
     // Onclick cart image send to Order Activity
     fun orderCart(view: View?) {
-        /*Intent intent= new Intent(Detail.this, OrderActivity.class);
-        Bundle bundle=new Bundle();
-        bundle.putString("namefood",foodName);
-        bundle.putString("pricefood",pricefood);
-        intent.putExtras(bundle);
-        startActivity(intent);*/
+
         val builder = AlertDialog.Builder(this)
         val alertOrderLayout: View = layoutInflater.inflate(R.layout.alert_order_layout, null)
         builder.setView(alertOrderLayout)
@@ -71,7 +121,7 @@ class DetailActivity : AppCompatActivity() {
         val btnDecrement = alertOrderLayout.findViewById<Button>(R.id.btn_decrement)
         val btnOk = alertOrderLayout.findViewById<Button>(R.id.btn_ok)
         val btnCancel = alertOrderLayout.findViewById<Button>(R.id.btn_cancel)
-        val etDeliveryAdd = alertOrderLayout.findViewById<EditText>(R.id.et_delivery_add)
+//        val etDeliveryAdd = alertOrderLayout.findViewById<EditText>(R.id.et_delivery_add)
         priceOfVeg = pricefood.toDouble()
         tvPrice.text = "₹ $pricefood"
         btnIncrement.setOnClickListener {
@@ -85,7 +135,7 @@ class DetailActivity : AppCompatActivity() {
         }
         btnDecrement.setOnClickListener {
             if (numberOfVeg >= 1) {
-                numberOfVeg = numberOfVeg - 0.5
+                numberOfVeg -= 0.5
             }
             // Decrement of 500gm will done onclick - button
 //  display(numberOfVeg);
@@ -96,18 +146,17 @@ class DetailActivity : AppCompatActivity() {
 //            tvPrice.text = NumberFormat.getCurrencyInstance().format(numberOfVeg * priceOfVeg)
         }
         btnOk.setOnClickListener {
-            if (etDeliveryAdd.text.toString().trim { it <= ' ' } == "") {
-                etDeliveryAdd.error = "Please Enter Delivery Address"
-                etDeliveryAdd.requestFocus()
-                // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
-            } else {
+//            if (etDeliveryAdd.text.toString().trim { it <= ' ' } == "") {
+//                etDeliveryAdd.error = "Please Enter Delivery Address"
+//                etDeliveryAdd.requestFocus()
+//                // Toast.makeText(Detail.this, "Yes", Toast.LENGTH_SHORT).show();
+//            } else {
                 val database = FirebaseDatabase.getInstance()
-                val ref = database.getReference("Cart")
+                val ref = database.getReference(CART)
                 val newPostRef = ref.push()
-                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), etDeliveryAdd.text.toString(), image))
-                Toast.makeText(baseContext, "Order Placed Successfully \n Thank you", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
-            }
+//                newPostRef.setValue(CartModel(foodName, tvPrice.text.toString(), tvQuantity.text.toString(), CART, image))
+//                Toast.makeText(baseContext, "Order Added to Cart Successfully \n Thank you", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, CartActivity::class.java))
         }
         builder.setCancelable(false)
         val alert:AlertDialog = builder.create()
@@ -119,7 +168,7 @@ class DetailActivity : AppCompatActivity() {
         super.onResume()
         val ab = supportActionBar
         if (ab != null) {
-            if(foodName.equals("")){
+            if(foodName == ""){
                 ab.title = "Food Description"
             } else {
                 ab.title = foodName

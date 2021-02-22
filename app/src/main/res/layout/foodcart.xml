@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen8dp">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_30"
@@ -34,7 +35,7 @@
             android:layout_height="80dp"
             android:contentDescription="@string/ordered_food_image"
             android:src="@drawable/apple"
-            android:paddingTop="12dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="@id/gl_30"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
@@ -44,26 +45,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            card_view:layout_constraintEnd_toEndOf="@id/gl_30"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@id/iv_food"
+            card_view:layout_constraintTop_toTopOf="parent"
             tools:text="Apple" />
 
         <TextView
             android:id="@+id/tv_title_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/dimen8dp"
             android:text="@string/price"
             android:textSize="18sp"
             card_view:layout_constraintStart_toEndOf="@id/gl_30"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <TextView
             android:id="@+id/tv_title_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/quantity"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             android:textSize="18sp"
             card_view:layout_constraintStart_toEndOf="@id/gl_30"
             card_view:layout_constraintTop_toBottomOf="@id/tv_title_price" />
@@ -73,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/address"
+            android:visibility="gone"
             android:textSize="18sp"
             card_view:layout_constraintStart_toEndOf="@id/gl_30"
             card_view:layout_constraintTop_toBottomOf="@id/tv_title_quantity" />
@@ -81,12 +86,12 @@
             android:id="@+id/tv_colon_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/dimen8dp"
             android:textSize="18sp"
             android:text=" : "
             android:textStyle="bold"
             card_view:layout_constraintEnd_toStartOf="@id/gl_55"
-            card_view:layout_constraintTop_toTopOf="parent"/>
+            card_view:layout_constraintTop_toBottomOf="@id/tv_name"/>
 
         <TextView
             android:id="@+id/tv_colon_quantity"
@@ -95,6 +100,7 @@
             android:textSize="18sp"
             android:text=" : "
             android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toStartOf="@id/gl_55"
             card_view:layout_constraintTop_toBottomOf="@id/tv_price" />
 
@@ -104,6 +110,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:text=" : "
+            android:visibility="gone"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toStartOf="@id/gl_55"
             card_view:layout_constraintTop_toBottomOf="@id/tv_quantity" />
@@ -112,10 +119,10 @@
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/dimen8dp"
             android:textSize="18sp"
             card_view:layout_constraintStart_toEndOf="@id/gl_55"
-            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_name"
             tools:text="Price" />
 
         <TextView
@@ -125,6 +132,7 @@
             android:textSize="18sp"
             card_view:layout_constraintStart_toEndOf="@id/gl_55"
             card_view:layout_constraintTop_toBottomOf="@id/tv_price"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             tools:text="Qunatity" />
 
         <TextView
@@ -132,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:visibility="gone"
             card_view:layout_constraintStart_toEndOf="@id/gl_55"
             card_view:layout_constraintTop_toBottomOf="@id/tv_quantity"
             tools:text="Add" />

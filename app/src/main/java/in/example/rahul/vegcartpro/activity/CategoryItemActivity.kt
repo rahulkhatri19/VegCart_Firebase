@@ -8,6 +8,7 @@ import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -103,6 +104,7 @@ class CategoryItemActivity : AppCompatActivity() {
 //                        Log.e("Data in flower:", foodNamePrice)
                         val intent = Intent(this@CategoryItemActivity, DetailActivity::class.java)
                         val bundle = Bundle()
+                        bundle.putString("id", clickItem.id)
                         bundle.putString("foodName", foodName)
                         bundle.putString("imageurl", imageUrl)
                         bundle.putString("advantage", foodAdvantage)

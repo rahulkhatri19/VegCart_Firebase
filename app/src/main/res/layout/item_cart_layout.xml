@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimen120dp"
+            android:contentDescription="@string/productImage"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@id/gl_35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_35"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Apple" />
+
+        <LinearLayout
+            android:id="@+id/llQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen16dp"
+            android:layout_marginTop="@dimen/dimen12dp"
+            android:background="@drawable/back_white_border_black"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dimen8dp"
+            android:paddingTop="@dimen/dimen4dp"
+            android:paddingEnd="@dimen/dimen8dp"
+            android:paddingBottom="@dimen/dimen4dp"
+            app:layout_constraintEnd_toStartOf="@id/tvProductPrice"
+            app:layout_constraintStart_toEndOf="@id/gl_35"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName">
+
+            <TextView
+                android:id="@+id/tvProductQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="12" />
+
+            <TextView
+                android:id="@+id/tvProductQuantityUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/kg"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/dimen16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/llQuantity"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName"
+            tools:text="123.5" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/back_white_border_black"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gl_35"
+            app:layout_constraintTop_toBottomOf="@id/tvProductPrice">
+
+            <Button
+                android:id="@+id/btnIncrement"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/green"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dimen16dp"
+                android:paddingTop="@dimen/dimen16dp"
+                android:paddingEnd="@dimen/dimen8dp"
+                android:paddingBottom="@dimen/dimen16dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen16sp"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen16dp"
+                android:paddingEnd="@dimen/dimen16dp"
+                android:paddingBottom="@dimen/dimen16dp"
+                android:text="@string/kg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen16sp" />
+
+            <Button
+                android:id="@+id/btnDecrement"
+                android:layout_width="@dimen/dimen40dp"
+                android:layout_height="@dimen/dimen40dp"
+                android:background="@color/btnSignActivity"
+                android:text="@string/minus"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

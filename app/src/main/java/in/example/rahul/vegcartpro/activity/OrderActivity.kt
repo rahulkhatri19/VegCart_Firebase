@@ -23,7 +23,7 @@ class OrderActivity : AppCompatActivity() {
     var foodprice = ""
     var foodname = ""
     lateinit var address: EditText
-    private val TAG = "OrderActivity"
+    private val TAG = OrderActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)

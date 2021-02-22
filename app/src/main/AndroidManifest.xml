@@ -16,8 +16,10 @@
         android:roundIcon="@drawable/fruit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CategoryItemActivity"
-            android:theme="@style/AppTheme.NoActionBarStyle"/>
+        <activity android:name=".activity.CartActivity"></activity>
+        <activity
+            android:name=".activity.CategoryItemActivity"
+            android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

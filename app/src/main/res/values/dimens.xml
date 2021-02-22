@@ -19,4 +19,15 @@
     <dimen name="ic_album_overflow_margin_top">10dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="dimen0dp">0dp</dimen>
+    <dimen name="dimen4dp">4dp</dimen>
+    <dimen name="dimen5dp">5dp</dimen>
+    <dimen name="dimen8dp">8dp</dimen>
+    <dimen name="dimen12dp">12dp</dimen>
+    <dimen name="dimen16dp">16dp</dimen>
+    <dimen name="dimen40dp">40dp</dimen>
+    <dimen name="dimen120dp">120dp</dimen>
+
+    <dimen name="dimen16sp">16sp</dimen>
+    <dimen name="dimen20sp">20sp</dimen>
 </resources>
