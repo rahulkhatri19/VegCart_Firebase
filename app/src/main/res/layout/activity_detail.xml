@@ -226,6 +226,8 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_shopping_cart"
             android:drawablePadding="8dp"
+            android:gravity="center"
+            android:drawableTint="@color/light_green"
             android:padding="8dp"
             android:text="@string/addToCart"
             android:textAppearance="?android:textAppearanceLarge"

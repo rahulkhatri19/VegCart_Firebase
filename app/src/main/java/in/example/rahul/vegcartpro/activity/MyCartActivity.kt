@@ -2,7 +2,9 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
 import `in`.example.rahul.vegcartpro.R
+import `in`.example.rahul.vegcartpro.model.BucketModel
 import `in`.example.rahul.vegcartpro.utils.Constants.CART
+import `in`.example.rahul.vegcartpro.utils.Utility
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.util.Log
@@ -35,7 +37,7 @@ class MyCartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_cart)
         database = FirebaseDatabase.getInstance()
-        allFoodData = database!!.getReference(CART)
+        allFoodData = database!!.getReference(CART).child(Utility.getDeviceId(this))
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
@@ -54,17 +56,17 @@ class MyCartActivity : AppCompatActivity() {
     }
 
     private fun loadData() {
-        val options: FirebaseRecyclerOptions<CartModel> = FirebaseRecyclerOptions.Builder<CartModel>().setQuery(allFoodData!!, CartModel::class.java).setLifecycleOwner(this).build()
-        val adapter: FirebaseRecyclerAdapter<CartModel, FoodViewHolder> = object : FirebaseRecyclerAdapter<CartModel, FoodViewHolder>(options) {
-            override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: CartModel) {
-                viewHolder.tvName.text = model.name
+        val options: FirebaseRecyclerOptions<BucketModel> = FirebaseRecyclerOptions.Builder<BucketModel>().setQuery(allFoodData!!, BucketModel::class.java).setLifecycleOwner(this).build()
+        val adapter: FirebaseRecyclerAdapter<BucketModel, FoodViewHolder> = object : FirebaseRecyclerAdapter<BucketModel, FoodViewHolder>(options) {
+            override fun onBindViewHolder(viewHolder: FoodViewHolder, position: Int, model: BucketModel) {
+                viewHolder.tvName.text = model.foodName
                 viewHolder.tvPrice.text = model.price.toString()
                 viewHolder.tvQuantity.text = model.quantity.toString()
-                viewHolder.tvAddress.text = model.address
+//                viewHolder.tvAddress.text = model.address
                 if(!model.foodImage.equals("")){
                     Picasso.with(this@MyCartActivity).load(model.foodImage).placeholder(R.drawable.placeholder).into(viewHolder.ivFood)
                 }
-                val stCart = "name: ${model.name} price: ${model.price} qut: ${model.quantity} add: ${model.address} image: ${model.foodImage}"
+                val stCart = "name: ${model.foodName} price: ${model.price} qut: ${model.quantity}, image: ${model.foodImage}"
                 Log.e("My cart",stCart)
 
                 progressDialog!!.dismiss()
