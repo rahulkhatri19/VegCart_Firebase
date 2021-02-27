@@ -22,10 +22,12 @@
     <dimen name="dimen0dp">0dp</dimen>
     <dimen name="dimen4dp">4dp</dimen>
     <dimen name="dimen5dp">5dp</dimen>
+    <dimen name="dimen7dp">7dp</dimen>
     <dimen name="dimen8dp">8dp</dimen>
     <dimen name="dimen12dp">12dp</dimen>
     <dimen name="dimen16dp">16dp</dimen>
     <dimen name="dimen40dp">40dp</dimen>
+    <dimen name="dimen48dp">48dp</dimen>
     <dimen name="dimen120dp">120dp</dimen>
 
     <dimen name="dimen16sp">16sp</dimen>
