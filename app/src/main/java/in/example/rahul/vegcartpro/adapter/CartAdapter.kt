@@ -1,9 +1,9 @@
 package `in`.example.rahul.vegcartpro.adapter
 
-import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.model.BucketModel
 import `in`.example.rahul.vegcartpro.utils.Constants.ONE
 import `in`.example.rahul.vegcartpro.utils.Constants.POINT_FIVE
+import `in`.rahulkhatri.vegcartpro.R
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View

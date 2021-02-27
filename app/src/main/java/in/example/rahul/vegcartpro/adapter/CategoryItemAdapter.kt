@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.adapter
 
-import `in`.example.rahul.vegcartpro.R
+import `in`.rahulkhatri.vegcartpro.R
 import `in`.example.rahul.vegcartpro.activity.DetailActivity
 import `in`.example.rahul.vegcartpro.model.FoodDetailModel
 import `in`.example.rahul.vegcartpro.utils.Constants.ADVANTAGE

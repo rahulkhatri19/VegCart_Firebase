@@ -2,8 +2,8 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.interfaces.ItemClickListener
 import `in`.example.rahul.vegcartpro.model.AllFoodModel
-import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
+import `in`.rahulkhatri.vegcartpro.R
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Typeface

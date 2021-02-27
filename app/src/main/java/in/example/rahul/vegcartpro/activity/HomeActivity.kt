@@ -2,16 +2,14 @@ package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.ItemModel
 import `in`.example.rahul.vegcartpro.adapter.HomeAdapter
-import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.model.UserDetailModel
-import `in`.example.rahul.vegcartpro.utils.Constants
 import `in`.example.rahul.vegcartpro.utils.Constants.USER_DETAIL
 import `in`.example.rahul.vegcartpro.utils.SharedPreferenceUtils
-import `in`.example.rahul.vegcartpro.utils.Utility
 import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceId
 import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceManufacturer
 import `in`.example.rahul.vegcartpro.utils.Utility.getDeviceModel
 import `in`.example.rahul.vegcartpro.utils.Utility.getOsVersionName
+import `in`.rahulkhatri.vegcartpro.R
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -237,7 +235,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
                 else -> false
             }
         } else {
-            result = connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
+            result = connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!.isConnected
 //            connectivityManager.run {
 //                connectivityManager.activeNetworkInfo ?.run {
 //                    result = when(type) {

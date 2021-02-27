@@ -1,13 +1,13 @@
 package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
-import `in`.example.rahul.vegcartpro.R
 import `in`.example.rahul.vegcartpro.model.BucketModel
 import `in`.example.rahul.vegcartpro.model.UserDetailModel
 import `in`.example.rahul.vegcartpro.utils.Constants
 import `in`.example.rahul.vegcartpro.utils.Constants.CART
 import `in`.example.rahul.vegcartpro.utils.Constants.ONE
 import `in`.example.rahul.vegcartpro.utils.Utility
+import `in`.rahulkhatri.vegcartpro.R
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle

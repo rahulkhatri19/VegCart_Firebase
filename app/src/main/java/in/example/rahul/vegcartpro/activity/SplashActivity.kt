@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.activity
 
-import `in`.example.rahul.vegcartpro.R
+import `in`.rahulkhatri.vegcartpro.R
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer

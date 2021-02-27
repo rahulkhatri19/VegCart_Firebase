@@ -1,6 +1,6 @@
 package `in`.example.rahul.vegcartpro.utils
 
-import `in`.example.rahul.vegcartpro.R
+import `in`.rahulkhatri.vegcartpro.R
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog

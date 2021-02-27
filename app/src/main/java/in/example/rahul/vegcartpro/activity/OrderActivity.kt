@@ -1,7 +1,7 @@
 package `in`.example.rahul.vegcartpro.activity
 
 import `in`.example.rahul.vegcartpro.model.CartModel
-import `in`.example.rahul.vegcartpro.R
+import `in`.rahulkhatri.vegcartpro.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
