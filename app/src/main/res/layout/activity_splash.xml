@@ -1,28 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.example.rahul.vegcartpro.activity.SplashActivity">
+    tools:context="in.rahulkhatri.vegcartpro.activity.SplashActivity">
 
-    <ImageView
-        android:id="@+id/iv_logo"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        app:srcCompat="@drawable/allvegitables"
-        android:contentDescription="@string/logo" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
 
-    <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivVegLogo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/app_name"
+        android:padding="@dimen/dimen0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/ivBucketLogo"
+        app:layout_constraintTop_toBottomOf="@id/gl22"
+        app:srcCompat="@drawable/veg_logo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBucketLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivVegLogo"
+        app:srcCompat="@drawable/bucket_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen4dp"
+        android:text="@string/cart"
         android:textAlignment="center"
-        android:textColor="@color/green"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-</RelativeLayout>
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ivBucketLogo"
+        app:layout_constraintStart_toStartOf="@id/ivBucketLogo"
+        app:layout_constraintTop_toBottomOf="@id/ivVegLogo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEllipseOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/ivBucketLogo"
+        app:layout_constraintStart_toEndOf="@id/ivBucketLogo"
+        app:srcCompat="@drawable/green_11_circle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEllipseTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen5dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/ivBucketLogo"
+        app:layout_constraintStart_toEndOf="@id/ivEllipseOne"
+        app:srcCompat="@drawable/green_22_circle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEllipseThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen5dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/ivBucketLogo"
+        app:layout_constraintStart_toEndOf="@id/ivEllipseTwo"
+        app:srcCompat="@drawable/green_33_circle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen40dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vegetable_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

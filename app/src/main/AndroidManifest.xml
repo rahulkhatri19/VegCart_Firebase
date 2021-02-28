@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="in.example.rahul.vegcartpro">
+    package="in.rahulkhatri.vegcartpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,13 +10,13 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/fruit"
+        android:icon="@drawable/vegetable_logo"
         android:label="@string/app_name"
-        android:logo="@drawable/fruit"
-        android:roundIcon="@drawable/fruit"
+        android:logo="@drawable/vegetable_logo"
+        android:roundIcon="@drawable/vegetable_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CartActivity"></activity>
+        <activity android:name=".activity.CartActivity" />
         <activity
             android:name=".activity.CategoryItemActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />

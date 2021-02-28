@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cb_grey"
-    tools:context="in.example.rahul.vegcartpro.activity.FlowerVegActivity">
+    tools:context="in.rahulkhatri.vegcartpro.activity.FlowerVegActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

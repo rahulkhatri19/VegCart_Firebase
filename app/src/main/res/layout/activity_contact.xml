@@ -19,7 +19,7 @@
             android:layout_height="200dp"
             android:contentDescription="@string/brand_logo"
             android:scaleType="centerCrop"
-            android:src="@drawable/rklogo"
+            android:src="@drawable/vegetable_logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -127,12 +127,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
+            android:visibility="gone"
             android:drawableStart="@drawable/ic_facebook"
             android:drawablePadding="16dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/facebook_profile"
+            android:text="facebook"
             android:textSize="16sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"

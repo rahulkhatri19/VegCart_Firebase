@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VegCartPro</string>
+    <string name="app_name">Veg Cart</string>
     <string name="some_natural_fact">Some Natural Fact :</string>
     <string name="visit_food">Visit Food</string>
     <string name="benefits">Benefits</string>
@@ -34,8 +34,7 @@
     <string name="github_profile">github.com/rahulkhatri19</string>
     <string name="twitter_profile">twitter.com/rahulkhatri019</string>
     <string name="linkedin_profile">linkedin.com/in/rahulkhatri19</string>
-    <string name="facebook_profile">facebook.com/rahulkhatri19</string>
-    <string name="gmail_id">khatri.rahul019@gmail.com</string>
+    <string name="gmail_id">rkhatri.dev@gmail.com</string>
     <string name="please_wait">Please Wait ...</string>
     <string name="order_product">Order Product</string>
     <string name="cancel">Cancel</string>
@@ -48,4 +47,5 @@
     <string name="pricePerkg">₹ %1$s per KG</string>
     <string name="addToCart">Add to Cart</string>
     <string name="bucket">bucket</string>
+    <string name="cart">Cart</string>
 </resources>

@@ -5,6 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="green">#40f708</color>
 
+    <color name="greenSplash11">#055000</color>
+    <color name="greenSplash22">#099200</color>
+    <color name="greenSplash33">#13C208</color>
+
     <color name="btnSignUp">#39796b</color>
     <color name="btnSignActivity">#a9d440</color>
 
