@@ -31,7 +31,7 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 
 #### App Demo video [Youtube link](https://youtu.be/w8XPFKjo17Y)
 
-Screenshot
+### Screenshot
 ----
 
 <table>
@@ -68,5 +68,8 @@ Screenshot
       <img src="screenshot/cart_screen.png" width=250 />
     </td>
   </tr>
-</table> 
+</table>
 
+### Credits
+
+- Logo and Splash Page Design by [Rakesh Kushwah](https://www.linkedin.com/in/rakesh-kushwah-76223b81/)
