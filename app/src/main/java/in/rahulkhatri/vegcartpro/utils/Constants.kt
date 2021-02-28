@@ -18,4 +18,5 @@ object Constants {
     const val PRICE = "price"
     const val USER_DETAIL = "userDetail"
     const val BUCKET = "bucket"
+    const val REQUEST_CODE_UPDATE = 1001
 }

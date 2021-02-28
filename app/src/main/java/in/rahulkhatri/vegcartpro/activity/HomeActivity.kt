@@ -10,6 +10,7 @@ import `in`.rahulkhatri.vegcartpro.utils.Utility.getDeviceManufacturer
 import `in`.rahulkhatri.vegcartpro.utils.Utility.getDeviceModel
 import `in`.rahulkhatri.vegcartpro.utils.Utility.getOsVersionName
 import `in`.rahulkhatri.vegcartpro.R
+import `in`.rahulkhatri.vegcartpro.utils.Constants.REQUEST_CODE_UPDATE
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -39,6 +40,9 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView
 import com.daimajia.slider.library.SliderTypes.BaseSliderView.OnSliderClickListener
 import com.daimajia.slider.library.SliderTypes.TextSliderView
 import com.daimajia.slider.library.Tricks.ViewPagerEx
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
@@ -57,6 +61,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         getUserDetail()
+        inAppUpdate()
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.title = "Menu"
         setSupportActionBar(toolbar)
@@ -96,6 +101,16 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         recyclerView?.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
         recyclerView?.itemAnimator = DefaultItemAnimator()
         recyclerView?.adapter = adapter
+    }
+
+    //  In-app update
+    private fun inAppUpdate() {
+        val updateManager = AppUpdateManagerFactory.create(this)
+        updateManager.appUpdateInfo.addOnSuccessListener {
+            if (it.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                updateManager.startUpdateFlowForResult(it, AppUpdateType.IMMEDIATE, this, REQUEST_CODE_UPDATE)
+            }
+        }
     }
 
     //  get user basic Detail
@@ -256,7 +271,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.bucket -> {
                 startActivity(Intent(this, CartActivity::class.java))
                 true
