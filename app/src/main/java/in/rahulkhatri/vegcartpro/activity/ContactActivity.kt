@@ -14,8 +14,6 @@ class ContactActivity : AppCompatActivity() {
         setContentView(R.layout.activity_contact)
 
         tv_facebook.setOnClickListener {
-            val web = Uri.parse("https://www.facebook.com/rahulkhatri19")
-            openBrowser(web)
         }
         tv_github.setOnClickListener {
             val web = Uri.parse("https://github.com/rahulkhatri19")
@@ -30,7 +28,7 @@ class ContactActivity : AppCompatActivity() {
             openBrowser(web)
         }
         tv_gmail.setOnClickListener {
-            val web = Uri.parse("mailto:khatri.rahul019@gmail.com")
+            val web = Uri.parse("mailto:rkhatri.dev@gmail.com")
             openBrowser(web)
         }
     }

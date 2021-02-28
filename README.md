@@ -29,7 +29,7 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 
 - [Release apk](APK/VegCart.apk) for check/Try app. 
 
-#### App Demo video [Youtube link](https://youtu.be/o5XZ_ZXkB6I)
+#### App Demo video [Youtube link](https://youtu.be/w8XPFKjo17Y)
 
 Screenshot
 ----
