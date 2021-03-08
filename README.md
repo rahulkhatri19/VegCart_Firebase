@@ -10,6 +10,8 @@ VegCart means Vegetable's cart/ basket, an online platform to sell vegetables. I
 
 #### [Firebase Realtime DB Gist JSON file link](https://gist.github.com/rahulkhatri19/4aa7e981ea008707c9808bad81e78edc)
 
+<a href="https://play.google.com/store/apps/details?id=in.rahulkhatri.vegcartpro&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="80"/></a>
+
 ### App Specifications: 
 
 - [Androidx](https://developer.android.com/jetpack/androidx) and Material Design
