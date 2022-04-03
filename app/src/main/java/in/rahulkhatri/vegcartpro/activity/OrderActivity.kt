@@ -4,13 +4,11 @@ import `in`.rahulkhatri.vegcartpro.model.CartModel
 import `in`.rahulkhatri.vegcartpro.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.iid.FirebaseInstanceId
 import java.text.NumberFormat
 
 class OrderActivity : AppCompatActivity() {
@@ -54,9 +52,6 @@ class OrderActivity : AppCompatActivity() {
         }
         //Intent likeIntent = new Intent(this, LikeServices.class);
 // likeIntent.putExtra(NOTIFICATION_ID_EXTRA,notificationId);
-        val token = FirebaseInstanceId.getInstance().token
-        Log.d(TAG, "Token: $token")
-        Toast.makeText(this@OrderActivity, token, Toast.LENGTH_SHORT).show()
     }
 
     fun increment(v: View?) {

@@ -5,11 +5,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         applicationId "in.rahulkhatri.vegcartpro"
-        minSdkVersion 17
-        targetSdkVersion 30
+        minSdkVersion 23
+        targetSdkVersion 31
         versionCode 5
         versionName "2.4.02"
         multiDexEnabled true
@@ -23,6 +23,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 //    sourceSets {
 //        main.java.srcDirs += 'src/main/kotlin'  //  separate Kotlin files from your Java files
