@@ -4,14 +4,20 @@ import `in`.rahulkhatri.vegcartpro.R
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact)
+
+        val tv_facebook:TextView = findViewById(R.id.tv_facebook)
+        val tv_github:TextView = findViewById(R.id.tv_github)
+        val tv_linkedin:TextView = findViewById(R.id.tv_linkedin)
+        val tv_twitter:TextView = findViewById(R.id.tv_twitter)
+        val tv_gmail:TextView = findViewById(R.id.tv_gmail)
 
         tv_facebook.setOnClickListener {
         }

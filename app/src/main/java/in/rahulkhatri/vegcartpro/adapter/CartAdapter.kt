@@ -8,9 +8,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_cart_layout.view.*
 
 /**
  * Created by Rahul Khatri on 14-07-2020.
@@ -18,15 +21,15 @@ import kotlinx.android.synthetic.main.item_cart_layout.view.*
  **/
 class CartAdapter(private val cartList: MutableList<BucketModel>, val context: Context) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val cl_main = view.cl_main
-        val ivProduct = view.ivProduct
-        val tvProductName = view.tvProductName
-        val tvProductQuantity = view.tvProductQuantity
-        val tvProductPrice = view.tvProductPrice
-        val btnIncrement = view.btnIncrement
-        val tvQuantity = view.tvQuantity
-        val tvUnit = view.tvUnit
-        val btnDecrement = view.btnDecrement
+        val cl_main = view.findViewById<ConstraintLayout>(R.id.cl_main)
+        val ivProduct = view.findViewById<ImageView>(R.id.ivProduct)
+        val tvProductName = view.findViewById<TextView>(R.id.tvProductName)
+        val tvProductQuantity = view.findViewById<TextView>(R.id.tvProductQuantity)
+        val tvProductPrice = view.findViewById<TextView>(R.id.tvProductPrice)
+        val btnIncrement = view.findViewById<Button>(R.id.btnIncrement)
+        val tvQuantity = view.findViewById<TextView>(R.id.tvQuantity)
+        val tvUnit = view.findViewById<TextView>(R.id.tvUnit)
+        val btnDecrement = view.findViewById<Button>(R.id.btnDecrement)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

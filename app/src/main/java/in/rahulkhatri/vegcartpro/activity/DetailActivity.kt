@@ -10,12 +10,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_detail.*
 
 
 class DetailActivity : AppCompatActivity() {
@@ -32,10 +33,35 @@ class DetailActivity : AppCompatActivity() {
     var numberOfVeg = 1.0
     var priceOfVeg = 0.0
 
+    lateinit var iv_food:ImageView
+    lateinit var tv_detail_advt:TextView
+    lateinit var tv_detail_vitamin:TextView
+    lateinit var tv_detail_disease:TextView
+    lateinit var tv_detail_precaution:TextView
+    lateinit var tv_price:TextView
+    lateinit var tv_cart:TextView
+    lateinit var tvQuantity:TextView
+    lateinit var llCart:LinearLayout
+    lateinit var btnDecrement:Button
+    lateinit var btnIncrement:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
+        iv_food = findViewById(R.id.iv_food)
+        tv_detail_advt = findViewById(R.id.tv_detail_advt)
+        tv_detail_vitamin = findViewById(R.id.tv_detail_vitamin)
+        tv_detail_disease = findViewById(R.id.tv_detail_disease)
+        tv_detail_precaution = findViewById(R.id.tv_detail_precaution)
+        tv_price = findViewById(R.id.tv_price)
+        tv_cart = findViewById(R.id.tv_cart)
+        tvQuantity = findViewById(R.id.tvQuantity)
+        llCart = findViewById(R.id.llCart)
+        btnDecrement = findViewById(R.id.btnDecrement)
+        btnIncrement = findViewById(R.id.btnIncrement)
+
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { finish() }
         val bundle = intent.extras

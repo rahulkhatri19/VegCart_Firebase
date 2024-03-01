@@ -16,11 +16,14 @@
         android:roundIcon="@drawable/vegetable_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.CartActivity"
+            android:exported="false"/>
         <activity
+            android:exported="false"
             android:name=".activity.CategoryItemActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
+            android:exported="true"
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,28 +35,31 @@
         <activity
             android:name=".activity.DetailActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
-        <activity android:name=".activity.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.HomeActivity"
+            android:exported="false"/>
         <activity
+            android:exported="false"
             android:name=".activity.OrderActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
+            android:exported="false"
             android:name=".activity.FlowerVegActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
+            android:exported="false"
             android:name=".activity.ContactActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
         <activity
+            android:exported="false"
             android:name=".activity.MyCartActivity"
             android:theme="@style/AppTheme.NoActionBarStyle" />
 
         <meta-data
+            android:exported="false"
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />
         <meta-data
+            android:exported="false"
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
     </application>

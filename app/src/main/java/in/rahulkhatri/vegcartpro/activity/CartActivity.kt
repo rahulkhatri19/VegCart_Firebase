@@ -7,19 +7,22 @@ import `in`.rahulkhatri.vegcartpro.utils.Utility
 import `in`.rahulkhatri.vegcartpro.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : AppCompatActivity() {
     val cartList = mutableListOf<BucketModel>()
+    lateinit var rvCart:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
-
+        rvCart = findViewById(R.id.rvCart)
+        val btnCheckout:Button = findViewById(R.id.btnCheckout)
         getCardData(this)
         rvCart.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         btnCheckout.setOnClickListener {

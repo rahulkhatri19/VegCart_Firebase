@@ -44,12 +44,12 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnPageChangeListener, HomeAdapter.ClickListener, NavigationView.OnNavigationItemSelectedListener {
     private val itemList: MutableList<ItemModel> = mutableListOf()
     private var recyclerView: RecyclerView? = null
+    lateinit var drawer: DrawerLayout
     var adapter: HomeAdapter? = null
     private val main: LinearLayout? = null
     var sliderLayout: SliderLayout? = null
@@ -66,7 +66,7 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
         toolbar.title = "Menu"
         setSupportActionBar(toolbar)
         sliderLayout = findViewById(R.id.slider)
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         recyclerView = findViewById(R.id.recyclerView)
 
         if (!isOnline()) {
@@ -181,8 +181,8 @@ class HomeActivity : AppCompatActivity(), OnSliderClickListener, ViewPagerEx.OnP
     // Navigation Drawer
     override fun onBackPressed() {
 //        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
         } else {
             if (doubleBackToExitPressedOnce) {
                 super.onBackPressed()
